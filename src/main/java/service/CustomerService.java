@@ -4,10 +4,18 @@
  */
 package service;
 
+import java.util.List;
+import model.Customer;
+
 /**
  *
  * @author Admin
  */
 public interface CustomerService {
-    
+    List<Customer> getAllCustomers();
+    Customer getCustomerById();
+    boolean updateCustomer(Customer customer);
+    boolean addCustomer(Customer customer);
+    boolean removeCustomer(int id);
+    boolean createCustomer(Customer customer);
 }
