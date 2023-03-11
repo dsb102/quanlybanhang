@@ -37,15 +37,6 @@ public class DBContext {
             System.out.println("Lỗi kết nối tới database: " + e.getMessage());
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                // Đóng kết nối
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (SQLException ex) {
-                System.out.println("Lỗi đóng kết nối: " + ex.getMessage());
-            }
         }
     }
     
