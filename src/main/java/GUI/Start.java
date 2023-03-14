@@ -71,14 +71,14 @@ public class Start extends javax.swing.JFrame {
 
     private void addCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCustomerActionPerformed
         // TODO add your handling code here:
-        quan_ly_khach_hang qlkh = new quan_ly_khach_hang();
+        QuanLyKhachHang qlkh = new QuanLyKhachHang();
         qlkh.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_addCustomerActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        quan_ly_don_hang qldh = new quan_ly_don_hang();
+        QuanLyDonHang qldh = new QuanLyDonHang();
         qldh.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed

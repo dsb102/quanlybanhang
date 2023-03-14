@@ -13,7 +13,7 @@ import model.Customer;
  */
 public interface CustomerService {
     List<Customer> getAllCustomers();
-    Customer getCustomerById();
+    Customer getCustomerById(int id);
     boolean updateCustomer(Customer customer);
     boolean addCustomer(Customer customer);
     boolean removeCustomer(int id);
