@@ -1,2 +1,3 @@
-com\mycompany\qlbh\Qlbh.class
-database\DBContext.class
+model\Supplier.class
+controller\OrderController.class
+model\Category.class

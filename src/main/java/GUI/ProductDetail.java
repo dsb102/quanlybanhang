@@ -9,6 +9,7 @@ package GUI;
  * @author hi
  */
 public class ProductDetail extends javax.swing.JFrame {
+    private Start start = new Start();
 
     /**
      * Creates new form ProductDetail
@@ -26,182 +27,90 @@ public class ProductDetail extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        idLabel2 = new javax.swing.JLabel();
-        dobLabel2 = new javax.swing.JLabel();
-        nameLabel2 = new javax.swing.JLabel();
-        genderLabel2 = new javax.swing.JLabel();
-        phoneNumberLabel2 = new javax.swing.JLabel();
-        txbCustomerID2 = new javax.swing.JTextField();
-        txbName = new javax.swing.JTextField();
-        txbDob = new javax.swing.JTextField();
-        txbGender = new javax.swing.JTextField();
-        txbPhoneNumber = new javax.swing.JTextField();
-        titleLabel = new javax.swing.JLabel();
-        saveCustomer = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblListProduct = new javax.swing.JTable();
+        txfListProduct = new javax.swing.JTextField();
+        btnBackProduct = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        idLabel2.setText("Mã sản phẩm");
-
-        dobLabel2.setText("Category ID");
-
-        nameLabel2.setText("Tên sản phẩm");
-
-        genderLabel2.setText("Giá");
-
-        phoneNumberLabel2.setText("Supplier ID");
-
-        txbCustomerID2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txbCustomerID2ActionPerformed(evt);
+        tblListProduct.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "STT", "Mã sản phẩm", "Tên sản phẩm", "Giá", "Loại", "Số lượng", "Nhà cung cấp"
             }
-        });
+        ));
+        jScrollPane2.setViewportView(tblListProduct);
 
-        txbName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txbNameActionPerformed(evt);
-            }
-        });
+        txfListProduct.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txfListProduct.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txfListProduct.setText("Danh sách sản phẩm");
 
-        txbDob.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txbDobActionPerformed(evt);
-            }
-        });
-
-        txbGender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txbGenderActionPerformed(evt);
-            }
-        });
-
-        txbPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txbPhoneNumberActionPerformed(evt);
-            }
-        });
-
-        titleLabel.setText("Sửa thông tin sản phẩm");
-
-        saveCustomer.setLabel("Lưu");
-        saveCustomer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveCustomerActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dobLabel2)
-                            .addComponent(phoneNumberLabel2)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addComponent(saveCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameLabel2)
-                            .addComponent(idLabel2)
-                            .addComponent(genderLabel2))
-                        .addGap(138, 138, 138)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txbName, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txbCustomerID2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txbPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txbDob, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txbGender, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(284, 284, 284)
-                        .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(155, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idLabel2)
-                    .addComponent(txbCustomerID2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nameLabel2)
-                    .addComponent(txbName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(genderLabel2))
-                .addGap(21, 21, 21)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(dobLabel2)
-                    .addComponent(txbDob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(phoneNumberLabel2)
-                    .addComponent(txbPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
-                .addComponent(saveCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txfListProduct)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1096, Short.MAX_VALUE))
+                .addContainerGap())
         );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(txfListProduct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        btnBackProduct.setText("Quay lại");
+        btnBackProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackProductActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnBackProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(btnBackProduct)
+                .addGap(31, 31, 31)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txbCustomerID2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbCustomerID2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txbCustomerID2ActionPerformed
-
-    private void txbNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txbNameActionPerformed
-
-    private void txbDobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbDobActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txbDobActionPerformed
-
-    private void txbGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbGenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txbGenderActionPerformed
-
-    private void txbPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbPhoneNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txbPhoneNumberActionPerformed
-
-    private void saveCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveCustomerActionPerformed
-        //thuc hien luu vao DB va chuyen ve trang danh sach san pham
-        /*
-        code
-        */
-        ProductsManagement productManagement = new ProductsManagement();
-        productManagement.setVisible(true);
+    private void btnBackProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackProductActionPerformed
+        // quay lai trang ban dau
+        start.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_saveCustomerActionPerformed
+    }//GEN-LAST:event_btnBackProductActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,18 +148,10 @@ public class ProductDetail extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel dobLabel2;
-    private javax.swing.JLabel genderLabel2;
-    private javax.swing.JLabel idLabel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel nameLabel2;
-    private javax.swing.JLabel phoneNumberLabel2;
-    private javax.swing.JButton saveCustomer;
-    private javax.swing.JLabel titleLabel;
-    private javax.swing.JTextField txbCustomerID2;
-    private javax.swing.JTextField txbDob;
-    private javax.swing.JTextField txbGender;
-    private javax.swing.JTextField txbName;
-    private javax.swing.JTextField txbPhoneNumber;
+    private javax.swing.JButton btnBackProduct;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tblListProduct;
+    private javax.swing.JTextField txfListProduct;
     // End of variables declaration//GEN-END:variables
 }

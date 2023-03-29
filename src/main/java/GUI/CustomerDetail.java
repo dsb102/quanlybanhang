@@ -9,7 +9,7 @@ package GUI;
  * @author hi
  */
 public class CustomerDetail extends javax.swing.JFrame {
-
+    private Start start = new Start();
     /**
      * Creates new form CustomerDetail
      */
@@ -26,217 +26,92 @@ public class CustomerDetail extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        idLabel = new javax.swing.JLabel();
-        dobLabel = new javax.swing.JLabel();
-        nameLabel = new javax.swing.JLabel();
-        genderLabel = new javax.swing.JLabel();
-        emailLabel = new javax.swing.JLabel();
-        addressLabel = new javax.swing.JLabel();
-        phoneNumberLabel = new javax.swing.JLabel();
-        txbCustomerID = new javax.swing.JTextField();
-        txbName = new javax.swing.JTextField();
-        txbDob = new javax.swing.JTextField();
-        txbGender = new javax.swing.JTextField();
-        txbPhoneNumber = new javax.swing.JTextField();
-        txbAddress = new javax.swing.JTextField();
-        txbEmail = new javax.swing.JTextField();
-        titleLabel = new javax.swing.JLabel();
-        saveCustomer = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblListCustomer = new javax.swing.JTable();
+        txfListCustomer = new javax.swing.JTextField();
+        btnBackCútomer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        idLabel.setText("Mã KH");
-
-        dobLabel.setText("Ngày sinh");
-
-        nameLabel.setText("Tên KH");
-
-        genderLabel.setText("Giới tính");
-
-        emailLabel.setText("Email");
-
-        addressLabel.setText("Địa chỉ");
-
-        phoneNumberLabel.setText("Số điện thoại");
-
-        txbCustomerID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txbCustomerIDActionPerformed(evt);
+        tblListCustomer.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "STT", "Mã KH", "Tên KH", "SĐT", "Giới tính", "Email", "Địa chỉ", "Ngày sinh"
             }
-        });
+        ));
+        tblListCustomer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setViewportView(tblListCustomer);
 
-        txbName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txbNameActionPerformed(evt);
-            }
-        });
+        txfListCustomer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txfListCustomer.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txfListCustomer.setText("Danh sách khách hàng");
 
-        txbDob.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txbDobActionPerformed(evt);
-            }
-        });
-
-        txbGender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txbGenderActionPerformed(evt);
-            }
-        });
-
-        txbPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txbPhoneNumberActionPerformed(evt);
-            }
-        });
-
-        txbAddress.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txbAddressActionPerformed(evt);
-            }
-        });
-
-        txbEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txbEmailActionPerformed(evt);
-            }
-        });
-
-        titleLabel.setText("Chi tiết thông tin khách hàng");
-
-        saveCustomer.setLabel("Lưu");
-        saveCustomer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveCustomerActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(genderLabel)
-                            .addComponent(dobLabel)
-                            .addComponent(emailLabel)
-                            .addComponent(phoneNumberLabel)
-                            .addComponent(addressLabel)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(idLabel)
-                                    .addComponent(nameLabel))
-                                .addGap(97, 97, 97)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txbName, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txbAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txbCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txbEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txbPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txbDob, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txbGender, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(287, 287, 287)
-                        .addComponent(saveCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(167, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idLabel)
-                    .addComponent(txbCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nameLabel)
-                    .addComponent(txbName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(genderLabel)
-                    .addComponent(txbGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(dobLabel)
-                    .addComponent(txbDob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(phoneNumberLabel)
-                    .addComponent(txbPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(emailLabel)
-                    .addComponent(txbEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addressLabel)
-                    .addComponent(txbAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(71, 71, 71)
-                .addComponent(saveCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txfListCustomer)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1039, Short.MAX_VALUE))
+                .addContainerGap())
         );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txfListCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        btnBackCútomer.setText("Quay lại");
+        btnBackCútomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackCútomerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnBackCútomer))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(btnBackCútomer)
+                .addGap(28, 28, 28)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txbCustomerIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbCustomerIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txbCustomerIDActionPerformed
-
-    private void txbNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txbNameActionPerformed
-
-    private void txbDobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbDobActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txbDobActionPerformed
-
-    private void txbGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbGenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txbGenderActionPerformed
-
-    private void txbPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbPhoneNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txbPhoneNumberActionPerformed
-
-    private void txbAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbAddressActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txbAddressActionPerformed
-
-    private void txbEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txbEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txbEmailActionPerformed
-
-    private void saveCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveCustomerActionPerformed
-        //thuc hien luu vao DB va chuyen ve trang danh sach khach hang
-        CustomerManagement customerManagement = new CustomerManagement();
-        customerManagement.setVisible(true);
+    private void btnBackCútomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackCútomerActionPerformed
+        // quay lai trang chu
+        start.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_saveCustomerActionPerformed
+    }//GEN-LAST:event_btnBackCútomerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,22 +149,10 @@ public class CustomerDetail extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel addressLabel;
-    private javax.swing.JLabel dobLabel;
-    private javax.swing.JLabel emailLabel;
-    private javax.swing.JLabel genderLabel;
-    private javax.swing.JLabel idLabel;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel nameLabel;
-    private javax.swing.JLabel phoneNumberLabel;
-    private javax.swing.JButton saveCustomer;
-    private javax.swing.JLabel titleLabel;
-    private javax.swing.JTextField txbAddress;
-    private javax.swing.JTextField txbCustomerID;
-    private javax.swing.JTextField txbDob;
-    private javax.swing.JTextField txbEmail;
-    private javax.swing.JTextField txbGender;
-    private javax.swing.JTextField txbName;
-    private javax.swing.JTextField txbPhoneNumber;
+    private javax.swing.JButton btnBackCútomer;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblListCustomer;
+    private javax.swing.JTextField txfListCustomer;
     // End of variables declaration//GEN-END:variables
 }
