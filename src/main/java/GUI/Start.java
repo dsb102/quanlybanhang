@@ -9,11 +9,15 @@ package GUI;
  * @author Hưng Cuốn
  */
 public class Start extends javax.swing.JFrame {
+
     /**
      * Creates new form Start
      */
     public Start() {
         initComponents();
+        this.pack();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
 
     /**
@@ -102,15 +106,25 @@ public class Start extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListCustomerActionPerformed
-        //chuyen sang man hinh danh sach khach hang
+//        chuyen sang man hinh danh sach khach hang
         CustomerDetail customerDetail = new CustomerDetail();
+        
+        customerDetail.setData();
+        customerDetail.setVisible(true);
+        customerDetail.pack();
+        customerDetail.setLocationRelativeTo(null);
         customerDetail.setVisible(true);
         this.dispose();
+        
+        System.out.println("ao that day");
     }//GEN-LAST:event_btnListCustomerActionPerformed
 
     private void btnOrderManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderManagementActionPerformed
         // chuyen sang man hinh hien thi danh sach don hang
         ListOrder listOrder = new ListOrder();
+        listOrder.setVisible(true);
+        listOrder.pack();
+        listOrder.setLocationRelativeTo(null);
         listOrder.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnOrderManagementActionPerformed
@@ -119,6 +133,9 @@ public class Start extends javax.swing.JFrame {
         // chuyen sang man hinh danh sach nhan vien
         EmployeeDetail employeeDetail = new EmployeeDetail();
         employeeDetail.setVisible(true);
+        employeeDetail.pack();
+        employeeDetail.setLocationRelativeTo(null);
+        employeeDetail.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnListEmployeeActionPerformed
 
@@ -126,12 +143,18 @@ public class Start extends javax.swing.JFrame {
         // chuyen sang danh sach shipper
         ShipperDetail shipperDetail = new ShipperDetail();
         shipperDetail.setVisible(true);
+        shipperDetail.pack();
+        shipperDetail.setLocationRelativeTo(null);
+        shipperDetail.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnListShipperActionPerformed
 
     private void btnListProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListProductActionPerformed
         // chuyen sang man hinh danh sach san pham
         ProductDetail productDetail = new ProductDetail();
+        productDetail.setVisible(true);
+        productDetail.pack();
+        productDetail.setLocationRelativeTo(null);
         productDetail.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnListProductActionPerformed
@@ -166,7 +189,7 @@ public class Start extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            new Start().setVisible(true);
+                new Start().setVisible(true);
             }
         });
     }

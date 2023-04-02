@@ -4,6 +4,14 @@
  */
 package GUI;
 
+import model.Shipper;
+import service.ShipperService;
+import service.impl.ShipperServiceImpl;
+
+import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author hi
@@ -13,6 +21,9 @@ public class ShipperDetail extends javax.swing.JFrame {
     /**
      * Creates new form ShipperDetail
      */
+
+    private ShipperService shipperService = new ShipperServiceImpl();
+
     public ShipperDetail() {
         initComponents();
     }
@@ -34,23 +45,34 @@ public class ShipperDetail extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tblListShipper.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
+        DefaultTableModel model = new DefaultTableModel();
+
+        for (String s : new String [] {
                 "STT", "ID Shipper", "Tên shipper", "SĐT", "Email"
-            }
-        ));
+        }) {
+            model.addColumn(s);
+        }
+
+        List<Shipper> shippers = shipperService.getAll();
+
+        for (Shipper shipper : shippers) {
+            model.addRow(new Object[] {
+                    shippers.indexOf(shipper) + 1,
+                    shipper.getShipperId(),
+                    shipper.getShipperName(),
+                    shipper.getPhoneNumber(),
+                    shipper.getEmail()
+            });
+        }
+
+        tblListShipper.setModel(model);
         tblListShipper.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(tblListShipper);
 
         txfListShipper.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txfListShipper.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txfListShipper.setText("Danh sách Shipper");
+        txfListShipper.setEditable(false);
 
         javax.swing.GroupLayout pnListShipperLayout = new javax.swing.GroupLayout(pnListShipper);
         pnListShipper.setLayout(pnListShipperLayout);
