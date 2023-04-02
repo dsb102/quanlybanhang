@@ -4,6 +4,7 @@
  */
 package service.impl;
 
+import java.util.List;
 import model.OrderDetail;
 import model.Orders;
 import service.OrderService;
@@ -15,13 +16,12 @@ import service.OrderService;
 public class OrderServiceImpl implements OrderService{
 
     @Override
-    public boolean createOrder(Orders order, OrderDetail orderDetail) {
+    public boolean removeOrder(OrderDetail orderDetail) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public boolean removeOrder(OrderDetail orderDetail) {
+    public boolean createOrder(Orders order, OrderDetail orderDetail) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
 }

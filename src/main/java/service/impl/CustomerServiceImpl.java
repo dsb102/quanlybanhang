@@ -16,37 +16,36 @@ import service.CustomerService;
  */
 public class CustomerServiceImpl implements CustomerService {
 
-    private CustomerDAO customerDAO = new CustomerDAO();
+    private final CustomerDAO customerDAO = new CustomerDAO();
 
     @Override
     public List<Customer> getAllCustomers() {
-        List<Customer> customers = new ArrayList<>();
-        customers = customerDAO.getAll();
+        List<Customer> customers = customerDAO.getAll();
         return customers;
     }
 
     @Override
-    public Customer getCustomerById() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Customer getCustomerById(int id) {
+        return customerDAO.findCustomerById(id);
     }
 
     @Override
     public boolean updateCustomer(Customer customer) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return customerDAO.updateCustomer(customer);
     }
 
     @Override
     public boolean addCustomer(Customer customer) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return customerDAO.addCustomer(customer);
     }
 
     @Override
     public boolean removeCustomer(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return customerDAO.removeCustomer(id);
     }
 
     @Override
     public boolean createCustomer(Customer customer) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return customerDAO.addCustomer(customer);
     }
 }
