@@ -9,12 +9,13 @@ package database.query;
  * @author Admin
  */
 public class SQLQuery {
-    public static String getAllCustomer() {
-        return "SELECT * FROM Customer where status = 1";
+
+    public static String getCustomerById() {
+        return "SELECT * FROM Customer WHERE customerId = ?";
     }
     
-    public static String getCustomerById(int id) {
-        return "SELECT * FROM Customer where customerId = 1";
+    public static String getAllCustomer() {
+        return "SELECT * FROM Customer WHERE status = 1";
     }
     
     public static String removeCustomerById() {

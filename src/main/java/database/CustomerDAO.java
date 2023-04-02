@@ -40,6 +40,29 @@ public class CustomerDAO extends DBContext {
         }
         return customers;
     }
+    
+    public Customer findCustomerById(int id) {
+        try {
+            PreparedStatement pstm = connection.prepareStatement(SQLQuery.getCustomerById());
+            pstm.setInt(1, id);
+            ResultSet resultSet = pstm.executeQuery();
+            if (resultSet.next()) {
+                int customerId = resultSet.getInt("customerId");
+                String customerName = resultSet.getString("customerName");
+                String gender = resultSet.getString("gender");
+                Date dateOfBirth = resultSet.getDate("dateOfBirth");
+                String phoneNumber = resultSet.getString("phoneNumber");
+                String email = resultSet.getString("email");
+                String address = resultSet.getString("address");
+                Customer customer = new Customer(customerId, customerName, gender, dateOfBirth, phoneNumber, email, address);
+                return customer;
+            }
+            return null;
+        } catch (SQLException exception) {
+            System.out.println("Tim that bai co loi SQL xay ra");
+        }
+        return null;
+    }
 
     public boolean updateCustomer(Customer customer) {
         boolean isSuccess = false;
@@ -102,5 +125,7 @@ public class CustomerDAO extends DBContext {
         return isSuccess;
     }
     
-    
+    public static void main(String[] args) {
+        System.out.println(new CustomerDAO().findCustomerById(1));
+    }
 }
