@@ -4,6 +4,14 @@
  */
 package GUI;
 
+import model.Product;
+import service.ProductService;
+import service.impl.ProductServiceImpl;
+
+import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author hi
@@ -12,6 +20,9 @@ public class ProductDetail extends javax.swing.JFrame {
     /**
      * Creates new form ProductDetail
      */
+
+    private ProductService productService = new ProductServiceImpl();
+
     public ProductDetail() {
         initComponents();
     }
@@ -33,22 +44,35 @@ public class ProductDetail extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tblListProduct.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
+        DefaultTableModel model = new DefaultTableModel();
+        for (String s : new String [] {
                 "STT", "Mã sản phẩm", "Tên sản phẩm", "Giá", "Loại", "Số lượng", "Nhà cung cấp"
-            }
-        ));
+        }) {
+            model.addColumn(s);
+        }
+
+        List<Product> products = productService.getAll();
+
+        for (Product product : products) {
+            model.addRow(new Object[] {
+                    products.indexOf(product),
+                    product.getProductId(),
+                    product.getProductName(),
+                    product.getUnitPrice(),
+                    product.getCategoryId(),
+                    10,
+                    product.getSupplierId()
+            });
+        }
+
+
+        tblListProduct.setModel(model);
         jScrollPane2.setViewportView(tblListProduct);
 
         txfListProduct.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txfListProduct.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txfListProduct.setText("Danh sách sản phẩm");
+        txfListProduct.setEditable(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);

@@ -29,4 +29,16 @@ public class SQLQuery {
     public static String addCustomer() {
         return "INSERT INTO Customer VALUES (1, ?, ?, ?, ? ,?, ?)";
     }
+
+    public static String getAllEmployee() {
+        return "SELECT * FROM Employee";
+    }
+
+    public static String getAllShipper() {
+        return "SELECT * FROM Shipper";
+    }
+
+    public static String getAllProduct() {
+        return "SELECT * FROM Product";
+    }
 }
