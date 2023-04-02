@@ -9,7 +9,6 @@ package GUI;
  * @author hi
  */
 public class CustomerDetail extends javax.swing.JFrame {
-    private final Start start = new Start();
     /**
      * Creates new form CustomerDetail
      */
@@ -109,6 +108,7 @@ public class CustomerDetail extends javax.swing.JFrame {
 
     private void btnBackCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackCustomerActionPerformed
         // quay lai trang chu
+        Start start = new Start();
         start.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackCustomerActionPerformed

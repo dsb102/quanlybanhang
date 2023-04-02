@@ -9,7 +9,6 @@ package GUI;
  * @author hi
  */
 public class ShipperDetail extends javax.swing.JFrame {
-    private final Start start = new Start();
 
     /**
      * Creates new form ShipperDetail
@@ -110,6 +109,7 @@ public class ShipperDetail extends javax.swing.JFrame {
 
     private void btnBackShipperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackShipperActionPerformed
         // quay lai trang chu
+        Start start = new Start();
         start.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackShipperActionPerformed
