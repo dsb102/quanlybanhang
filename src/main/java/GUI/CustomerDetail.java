@@ -9,7 +9,6 @@ package GUI;
  * @author hi
  */
 public class CustomerDetail extends javax.swing.JFrame {
-    private final Start start = new Start();
     /**
      * Creates new form CustomerDetail
      */
@@ -30,7 +29,7 @@ public class CustomerDetail extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListCustomer = new javax.swing.JTable();
         txfListCustomer = new javax.swing.JTextField();
-        btnBackCútomer = new javax.swing.JButton();
+        btnBackCustomer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,10 +72,10 @@ public class CustomerDetail extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnBackCútomer.setText("Quay lại");
-        btnBackCútomer.addActionListener(new java.awt.event.ActionListener() {
+        btnBackCustomer.setText("Quay lại");
+        btnBackCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackCútomerActionPerformed(evt);
+                btnBackCustomerActionPerformed(evt);
             }
         });
 
@@ -88,7 +87,7 @@ public class CustomerDetail extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnBackCútomer))
+                        .addComponent(btnBackCustomer))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -98,7 +97,7 @@ public class CustomerDetail extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnBackCútomer)
+                .addComponent(btnBackCustomer)
                 .addGap(28, 28, 28)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(64, Short.MAX_VALUE))
@@ -107,11 +106,12 @@ public class CustomerDetail extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBackCútomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackCútomerActionPerformed
+    private void btnBackCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackCustomerActionPerformed
         // quay lai trang chu
+        Start start = new Start();
         start.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnBackCútomerActionPerformed
+    }//GEN-LAST:event_btnBackCustomerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,7 +147,7 @@ public class CustomerDetail extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBackCútomer;
+    private javax.swing.JButton btnBackCustomer;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblListCustomer;

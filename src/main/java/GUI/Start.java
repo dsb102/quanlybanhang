@@ -9,11 +9,6 @@ package GUI;
  * @author Hưng Cuốn
  */
 public class Start extends javax.swing.JFrame {
-    private final ListOrder listOrder = new ListOrder();
-    private final CustomerDetail customerDetail = new CustomerDetail();
-    private final ProductDetail productDetail = new ProductDetail();   
-    private final EmployeeDetail employeeDetail = new EmployeeDetail();
-    private final ShipperDetail shipperDetail = new ShipperDetail();
     /**
      * Creates new form Start
      */
@@ -108,30 +103,35 @@ public class Start extends javax.swing.JFrame {
 
     private void btnListCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListCustomerActionPerformed
         //chuyen sang man hinh danh sach khach hang
+        CustomerDetail customerDetail = new CustomerDetail();
         customerDetail.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnListCustomerActionPerformed
 
     private void btnOrderManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderManagementActionPerformed
         // chuyen sang man hinh hien thi danh sach don hang
+        ListOrder listOrder = new ListOrder();
         listOrder.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnOrderManagementActionPerformed
 
     private void btnListEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListEmployeeActionPerformed
         // chuyen sang man hinh danh sach nhan vien
+        EmployeeDetail employeeDetail = new EmployeeDetail();
         employeeDetail.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnListEmployeeActionPerformed
 
     private void btnListShipperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListShipperActionPerformed
         // chuyen sang danh sach shipper
+        ShipperDetail shipperDetail = new ShipperDetail();
         shipperDetail.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnListShipperActionPerformed
 
     private void btnListProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListProductActionPerformed
         // chuyen sang man hinh danh sach san pham
+        ProductDetail productDetail = new ProductDetail();
         productDetail.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnListProductActionPerformed

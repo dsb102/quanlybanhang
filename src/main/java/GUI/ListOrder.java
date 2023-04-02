@@ -4,13 +4,13 @@
  */
 package GUI;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hi
  */
 public class ListOrder extends javax.swing.JFrame {
-    
-    private final Start start = new Start();
 
     /**
      * Creates new form ListOrder
@@ -234,8 +234,18 @@ public class ListOrder extends javax.swing.JFrame {
         lbOrderIdEmployee.setText("ID Nhân viên");
 
         btnAddToBill.setText("Thêm vào hóa đơn");
+        btnAddToBill.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddToBillActionPerformed(evt);
+            }
+        });
 
         btnAddToListOrder.setText("Thêm vào giỏ hàng");
+        btnAddToListOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddToListOrderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnOrderLayout = new javax.swing.GroupLayout(pnOrder);
         pnOrder.setLayout(pnOrderLayout);
@@ -450,10 +460,17 @@ public class ListOrder extends javax.swing.JFrame {
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // huy thanh toan
+        JOptionPane.showConfirmDialog(this, "Dã hủy", "Thông báo", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaymentActionPerformed
-        // thanh toan
+        // xu ly logic va hien popup thong bao thanh toan thanh cong
+        //check dieu kien, neu dung thong bao thanh cong
+        if (true){
+            JOptionPane.showConfirmDialog(this, "Thanh toán thành công", "Thông báo", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showConfirmDialog(this, "Thanh toán thất bại", "Thông báo", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnPaymentActionPerformed
 
     private void txfBillQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfBillQuantityActionPerformed
@@ -462,9 +479,31 @@ public class ListOrder extends javax.swing.JFrame {
 
     private void btnBackListOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackListOrderActionPerformed
         // quay lai trang chinh
+        Start start = new Start();
         start.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackListOrderActionPerformed
+
+    private void btnAddToBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToBillActionPerformed
+        // xu ly logic va hien popup thong bao them vao hoa don thanh cong
+        //check dieu kien, neu dung thong bao thanh cong
+        if (true){
+            JOptionPane.showConfirmDialog(this, "Thêm vào hóa đơn thành công", "Thông báo", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showConfirmDialog(this, "Thêm vào hóa đơn thất bại", "Thông báo", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_btnAddToBillActionPerformed
+
+    private void btnAddToListOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToListOrderActionPerformed
+        // xu ly logic va hien popup thong bao them gio hang thanh cong
+        //check dieu kien, neu dung thong bao thanh cong
+        if (true){
+            JOptionPane.showConfirmDialog(this, "Thêm vào giỏ hàng thành công", "Thông báo", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showConfirmDialog(this, "Thêm vào giỏ hàng thất bại", "Thông báo", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAddToListOrderActionPerformed
 
     /**
      * @param args the command line arguments
