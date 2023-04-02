@@ -4,7 +4,7 @@
  */
 package model;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -18,10 +18,22 @@ public class Orders {
     private Date deleveryDate;//ngày giao hàng
     private double totalPrice;
     private int shipperId;
+    private boolean payment;
+    private boolean status;
 
     public Orders() {
     }
-    
+
+    public Orders(int orderId, int customerId, int employeeId, Date orderDate, double totalPrice, boolean payment) {
+        this.orderId = orderId;
+        this.customerId = customerId;
+        this.employeeId = employeeId;
+        this.orderDate = orderDate;
+        this.totalPrice = totalPrice;
+        this.shipperId = shipperId;
+        this.payment = payment;
+    }
+
     public Orders(int orderId, int customerId, int employeeId, Date orderDate, Date deleveryDate, double totalPrice, int shipperId) {
         this.orderId = orderId;
         this.customerId = customerId;
@@ -86,5 +98,21 @@ public class Orders {
 
     public void setShipperId(int shipperId) {
         this.shipperId = shipperId;
+    }
+
+    public boolean isPayment() {
+        return payment;
+    }
+
+    public void setPayment(boolean payment) {
+        this.payment = payment;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

@@ -22,7 +22,8 @@ public class ProductDAO extends DBContext{
                 double price = resultSet.getDouble("unitPrice");
                 int categoryId = resultSet.getInt("categoryId");
                 int supplierId = resultSet.getInt("supplierId");
-                Product product = new Product(id, name, price, categoryId, supplierId);
+                int quantity = resultSet.getInt("quantity");
+                Product product = new Product(id, name, price, categoryId, quantity, supplierId);
                 products.add(product);
             }
         } catch (SQLException e) {

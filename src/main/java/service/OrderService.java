@@ -7,11 +7,16 @@ package service;
 import model.OrderDetail;
 import model.Orders;
 
+import java.util.List;
+
 /**
  *
  * @author Admin
  */
 public interface OrderService {
-    boolean createOrder(Orders order, OrderDetail orderDetail);
-    boolean removeOrder(OrderDetail orderDetail);
+    boolean createOrder(Orders order);
+    boolean removeOrder(int id);
+    List<Orders> getAllOrder();
+    boolean updateOrder(Orders orders);
+    Orders findById(int id);
 }

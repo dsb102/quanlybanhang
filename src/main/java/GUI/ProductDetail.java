@@ -60,11 +60,10 @@ public class ProductDetail extends javax.swing.JFrame {
                     product.getProductName(),
                     product.getUnitPrice(),
                     product.getCategoryId(),
-                    10,
+                    product.getQuantity(),
                     product.getSupplierId()
             });
         }
-
 
         tblListProduct.setModel(model);
         jScrollPane2.setViewportView(tblListProduct);

@@ -5,6 +5,8 @@
 package service.impl;
 
 import java.util.List;
+
+import database.OrderDAO;
 import model.OrderDetail;
 import model.Orders;
 import service.OrderService;
@@ -15,13 +17,30 @@ import service.OrderService;
  */
 public class OrderServiceImpl implements OrderService{
 
+    private OrderDAO orderDAO = new OrderDAO();
+
     @Override
-    public boolean removeOrder(OrderDetail orderDetail) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean removeOrder(int id) {
+        return orderDAO.removeOrder(id);
     }
 
     @Override
-    public boolean createOrder(Orders order, OrderDetail orderDetail) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<Orders> getAllOrder() {
+        return orderDAO.getAll();
+    }
+
+    @Override
+    public boolean updateOrder(Orders orders) {
+        return orderDAO.updateOrder(orders);
+    }
+
+    @Override
+    public Orders findById(int id) {
+        return orderDAO.findById(id);
+    }
+
+    @Override
+    public boolean createOrder(Orders order) {
+        return orderDAO.createOrder(order);
     }
 }
