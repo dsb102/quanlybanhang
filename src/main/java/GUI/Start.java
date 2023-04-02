@@ -9,7 +9,6 @@ package GUI;
  * @author Hưng Cuốn
  */
 public class Start extends javax.swing.JFrame {
-
     /**
      * Creates new form Start
      */
