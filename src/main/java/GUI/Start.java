@@ -9,11 +9,11 @@ package GUI;
  * @author Hưng Cuốn
  */
 public class Start extends javax.swing.JFrame {
-    private ListOrder listOrder = new ListOrder();
-    private CustomerDetail customerDetail = new CustomerDetail();
-    private ProductDetail productDetail = new ProductDetail();   
-    private EmployeeDetail employeeDetail = new EmployeeDetail();
-    private ShipperDetail shipperDetail = new ShipperDetail();
+    private final ListOrder listOrder = new ListOrder();
+    private final CustomerDetail customerDetail = new CustomerDetail();
+    private final ProductDetail productDetail = new ProductDetail();   
+    private final EmployeeDetail employeeDetail = new EmployeeDetail();
+    private final ShipperDetail shipperDetail = new ShipperDetail();
     /**
      * Creates new form Start
      */
@@ -166,7 +166,7 @@ public class Start extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Start().setVisible(true);
+            new Start().setVisible(true);
             }
         });
     }

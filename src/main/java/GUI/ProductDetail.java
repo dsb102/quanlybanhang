@@ -9,7 +9,7 @@ package GUI;
  * @author hi
  */
 public class ProductDetail extends javax.swing.JFrame {
-    private Start start = new Start();
+    private final Start start = new Start();
 
     /**
      * Creates new form ProductDetail
@@ -140,10 +140,8 @@ public class ProductDetail extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ProductDetail().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new ProductDetail().setVisible(true);
         });
     }
 

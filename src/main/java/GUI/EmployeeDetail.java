@@ -8,12 +8,12 @@ package GUI;
  *
  * @author hi
  */
-public class CustomerDetail extends javax.swing.JFrame {
+public class EmployeeDetail extends javax.swing.JFrame {
     private final Start start = new Start();
     /**
-     * Creates new form CustomerDetail
+     * Creates new form EmployeeDetail
      */
-    public CustomerDetail() {
+    public EmployeeDetail() {
         initComponents();
     }
 
@@ -26,57 +26,57 @@ public class CustomerDetail extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
+        pnListEmployee = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblListCustomer = new javax.swing.JTable();
-        txfListCustomer = new javax.swing.JTextField();
-        btnBackCútomer = new javax.swing.JButton();
+        tblListEmployee = new javax.swing.JTable();
+        txfListEmployee = new javax.swing.JTextField();
+        btnBackEmployee = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tblListCustomer.setModel(new javax.swing.table.DefaultTableModel(
+        tblListEmployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "STT", "Mã KH", "Tên KH", "SĐT", "Giới tính", "Email", "Địa chỉ", "Ngày sinh"
+                "STT", "ID Nhân viên", "Tên nhân viên", "Giới tính", "Ngày sinh", "SĐT", "Email", "Địa chỉ", "Mức lương"
             }
         ));
-        tblListCustomer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane1.setViewportView(tblListCustomer);
+        tblListEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setViewportView(tblListEmployee);
 
-        txfListCustomer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txfListCustomer.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txfListCustomer.setText("Danh sách khách hàng");
+        txfListEmployee.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txfListEmployee.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txfListEmployee.setText("Danh sách nhân viên");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnListEmployeeLayout = new javax.swing.GroupLayout(pnListEmployee);
+        pnListEmployee.setLayout(pnListEmployeeLayout);
+        pnListEmployeeLayout.setHorizontalGroup(
+            pnListEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnListEmployeeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txfListCustomer)
+                .addGroup(pnListEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txfListEmployee)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1039, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        pnListEmployeeLayout.setVerticalGroup(
+            pnListEmployeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnListEmployeeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txfListCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txfListEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        btnBackCútomer.setText("Quay lại");
-        btnBackCútomer.addActionListener(new java.awt.event.ActionListener() {
+        btnBackEmployee.setText("Quay lại");
+        btnBackEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackCútomerActionPerformed(evt);
+                btnBackEmployeeActionPerformed(evt);
             }
         });
 
@@ -88,30 +88,30 @@ public class CustomerDetail extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnBackCútomer))
+                        .addComponent(btnBackEmployee))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                        .addComponent(pnListEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnBackCútomer)
+                .addComponent(btnBackEmployee)
                 .addGap(28, 28, 28)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addComponent(pnListEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBackCútomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackCútomerActionPerformed
+    private void btnBackEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackEmployeeActionPerformed
         // quay lai trang chu
         start.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnBackCútomerActionPerformed
+    }//GEN-LAST:event_btnBackEmployeeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,27 +130,27 @@ public class CustomerDetail extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CustomerDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CustomerDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CustomerDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CustomerDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeDetail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new CustomerDetail().setVisible(true);
+            new EmployeeDetail().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBackCútomer;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton btnBackEmployee;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblListCustomer;
-    private javax.swing.JTextField txfListCustomer;
+    private javax.swing.JPanel pnListEmployee;
+    private javax.swing.JTable tblListEmployee;
+    private javax.swing.JTextField txfListEmployee;
     // End of variables declaration//GEN-END:variables
 }
