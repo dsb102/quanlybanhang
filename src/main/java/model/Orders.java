@@ -15,7 +15,7 @@ public class Orders {
     private int customerId;
     private int employeeId;
     private Date orderDate;
-    private Date deleveryDate;
+    private Date deleveryDate;//ngày giao hàng
     private double totalPrice;
     private int shipperId;
 
