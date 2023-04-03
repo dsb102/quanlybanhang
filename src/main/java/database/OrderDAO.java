@@ -79,6 +79,23 @@ public class OrderDAO extends DBContext {
         }
     }
 
+    public boolean updateOrder(int orderId, int payment) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQuery.updateOrderPayment());
+            preparedStatement.setInt(1, payment);
+            preparedStatement.setInt(2, orderId);
+            System.out.println(preparedStatement);
+            int rowUpdate = preparedStatement.executeUpdate();
+            if (rowUpdate == 0) {
+                return false;
+            }
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public boolean updateOrder(Orders orderDetail) {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQuery.updateOrder());
@@ -121,5 +138,9 @@ public class OrderDAO extends DBContext {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new OrderDAO().updateOrder(1, 1));
     }
 }

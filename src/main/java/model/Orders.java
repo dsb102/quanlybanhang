@@ -24,6 +24,17 @@ public class Orders {
     public Orders() {
     }
 
+    public Orders(int customerId, int employeeId) {
+        this.customerId = customerId;
+        this.employeeId = employeeId;
+    }
+
+    public Orders(int orderId, int customerId, int employeeId) {
+        this.orderId = orderId;
+        this.customerId = customerId;
+        this.employeeId = employeeId;
+    }
+
     public Orders(int orderId, int customerId, int employeeId, Date orderDate, double totalPrice, boolean payment) {
         this.orderId = orderId;
         this.customerId = customerId;

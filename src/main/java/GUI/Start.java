@@ -98,14 +98,12 @@ public class Start extends javax.swing.JFrame {
 //        chuyen sang man hinh danh sach khach hang
         CustomerDetail customerDetail = new CustomerDetail();
         
-        customerDetail.setData();
+//        customerDetail.setData();
         customerDetail.setVisible(true);
         customerDetail.pack();
         customerDetail.setLocationRelativeTo(null);
         customerDetail.setVisible(true);
         this.dispose();
-        
-        System.out.println("ao that day");
     }//GEN-LAST:event_btnListCustomerActionPerformed
 
     private void btnOrderManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderManagementActionPerformed

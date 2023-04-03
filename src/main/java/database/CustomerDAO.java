@@ -74,6 +74,7 @@ public class CustomerDAO extends DBContext {
             pstmt.setString(4, customer.getPhoneNumber());
             pstmt.setString(5, customer.getEmail());
             pstmt.setString(6, customer.getAddress());
+            pstmt.setInt(7, customer.getCustomerId());
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected > 0) {
                 isSuccess = true;
@@ -126,6 +127,9 @@ public class CustomerDAO extends DBContext {
     }
     
     public static void main(String[] args) {
-        System.out.println(new CustomerDAO().findCustomerById(1));
+        Customer customer = new CustomerDAO().findCustomerById(2);
+        customer.setCustomerName(customer.getCustomerName()+"1");
+        System.out.println(new CustomerDAO().updateCustomer(customer));
+//        System.out.println(new CustomerDAO().addCustomer(new Customer(1, "abc", "abc", new java.sql.Date(100L), "abc", "abc", "abc")));
     }
 }
