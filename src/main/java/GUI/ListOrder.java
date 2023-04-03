@@ -32,12 +32,12 @@ public class ListOrder extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListBill = new javax.swing.JTable();
         txfListBill = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        btnListOrderDelete = new javax.swing.JButton();
         pnListOrder = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblListOrder = new javax.swing.JTable();
         jTextField20 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
+        btnOrderDelete = new javax.swing.JButton();
         pnOrder = new javax.swing.JPanel();
         txfOrder = new javax.swing.JTextField();
         lbIDProduct = new javax.swing.JLabel();
@@ -49,27 +49,14 @@ public class ListOrder extends javax.swing.JFrame {
         lbOrderIdEmployee = new javax.swing.JLabel();
         txfOrderIdEmployee = new javax.swing.JTextField();
         btnAddToBill = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnListOrderUpdate = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txfOrderIdProduct2 = new javax.swing.JTextField();
         pnBill = new javax.swing.JPanel();
         txfPayment = new javax.swing.JTextField();
-        lbBillCustomerName = new javax.swing.JLabel();
-        lbBillEmployeeName = new javax.swing.JLabel();
-        lbBillProductName = new javax.swing.JLabel();
-        lbBillOrderDate = new javax.swing.JLabel();
-        lbBillQuantity = new javax.swing.JLabel();
         lbBillTotalPrice = new javax.swing.JLabel();
-        lbBillPhoneNum = new javax.swing.JLabel();
-        txfBillCustname = new javax.swing.JTextField();
-        txfBillPhoneNum = new javax.swing.JTextField();
-        txfBillEmployeeName = new javax.swing.JTextField();
-        txfBillOrderDate = new javax.swing.JTextField();
-        txfBillQuantity = new javax.swing.JTextField();
         txfBillTotalPrice = new javax.swing.JTextField();
         btnPayment = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         pnAddOrderDetail = new javax.swing.JPanel();
         txfAddOrderDetail = new javax.swing.JTextField();
         lbIDProduct1 = new javax.swing.JLabel();
@@ -83,7 +70,7 @@ public class ListOrder extends javax.swing.JFrame {
         txfOrderQuantity1 = new javax.swing.JTextField();
         lbIdOrder = new javax.swing.JLabel();
         btnAddToListOrder = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnOrderUpdate = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txfOrderIdProduct3 = new javax.swing.JTextField();
 
@@ -113,7 +100,7 @@ public class ListOrder extends javax.swing.JFrame {
         txfListBill.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txfListBill.setText("Danh sách đơn hàng");
 
-        jButton3.setText("Xóa");
+        btnListOrderDelete.setText("Xóa");
 
         javax.swing.GroupLayout pnListbillLayout = new javax.swing.GroupLayout(pnListbill);
         pnListbill.setLayout(pnListbillLayout);
@@ -125,14 +112,14 @@ public class ListOrder extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
                     .addComponent(txfListBill)
                     .addGroup(pnListbillLayout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(btnListOrderDelete)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         pnListbillLayout.setVerticalGroup(
             pnListbillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnListbillLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addComponent(jButton3)
+                .addComponent(btnListOrderDelete)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txfListBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -157,7 +144,7 @@ public class ListOrder extends javax.swing.JFrame {
         jTextField20.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField20.setText("Chi tiết đơn hàng");
 
-        jButton6.setText("Xóa");
+        btnOrderDelete.setText("Xóa");
 
         javax.swing.GroupLayout pnListOrderLayout = new javax.swing.GroupLayout(pnListOrder);
         pnListOrder.setLayout(pnListOrderLayout);
@@ -169,7 +156,7 @@ public class ListOrder extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
                     .addComponent(jTextField20)
                     .addGroup(pnListOrderLayout.createSequentialGroup()
-                        .addComponent(jButton6)
+                        .addComponent(btnOrderDelete)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -177,7 +164,7 @@ public class ListOrder extends javax.swing.JFrame {
             pnListOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnListOrderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton6)
+                .addComponent(btnOrderDelete)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -201,7 +188,7 @@ public class ListOrder extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(pnListbill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(pnListOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -225,7 +212,7 @@ public class ListOrder extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Sửa");
+        btnListOrderUpdate.setText("Sửa");
 
         jLabel1.setText(" Mã đơn hàng");
 
@@ -237,7 +224,7 @@ public class ListOrder extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(btnAddToBill)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnListOrderUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(36, Short.MAX_VALUE))
             .addGroup(pnOrderLayout.createSequentialGroup()
                 .addContainerGap()
@@ -290,7 +277,7 @@ public class ListOrder extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnAddToBill, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnListOrderUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(47, 47, 47))
         );
 
@@ -303,25 +290,7 @@ public class ListOrder extends javax.swing.JFrame {
             }
         });
 
-        lbBillCustomerName.setText("Tên khách hàng");
-
-        lbBillEmployeeName.setText("Tên nhân viên");
-
-        lbBillProductName.setText("Tên sản phẩm");
-
-        lbBillOrderDate.setText("Ngày đặt hàng");
-
-        lbBillQuantity.setText("Số lượng");
-
         lbBillTotalPrice.setText("Tổng tiền");
-
-        lbBillPhoneNum.setText("SĐT");
-
-        txfBillQuantity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txfBillQuantityActionPerformed(evt);
-            }
-        });
 
         btnPayment.setText("Thanh toán");
         btnPayment.addActionListener(new java.awt.event.ActionListener() {
@@ -330,10 +299,6 @@ public class ListOrder extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
-
         javax.swing.GroupLayout pnBillLayout = new javax.swing.GroupLayout(pnBill);
         pnBill.setLayout(pnBillLayout);
         pnBillLayout.setHorizontalGroup(
@@ -341,89 +306,29 @@ public class ListOrder extends javax.swing.JFrame {
             .addGroup(pnBillLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBillLayout.createSequentialGroup()
-                        .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbBillOrderDate)
-                            .addComponent(lbBillQuantity))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                        .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(pnBillLayout.createSequentialGroup()
-                                .addComponent(txfBillQuantity)
-                                .addGap(7, 7, 7))
-                            .addGroup(pnBillLayout.createSequentialGroup()
-                                .addComponent(txfBillOrderDate, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(9, 9, 9))))
+                    .addComponent(txfPayment)
                     .addGroup(pnBillLayout.createSequentialGroup()
+                        .addComponent(lbBillTotalPrice)
+                        .addGap(30, 30, 30)
                         .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txfPayment)
                             .addGroup(pnBillLayout.createSequentialGroup()
-                                .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnBillLayout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lbBillCustomerName)
-                                            .addComponent(lbBillPhoneNum)))
-                                    .addComponent(lbBillEmployeeName)
-                                    .addComponent(lbBillProductName))
-                                .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnBillLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(pnBillLayout.createSequentialGroup()
-                                                .addComponent(btnPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                            .addComponent(txfBillPhoneNum, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(txfBillEmployeeName, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(txfBillCustname)))
-                                    .addGroup(pnBillLayout.createSequentialGroup()
-                                        .addGap(11, 11, 11)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                            .addGroup(pnBillLayout.createSequentialGroup()
-                                .addComponent(lbBillTotalPrice)
-                                .addGap(63, 63, 63)
-                                .addComponent(txfBillTotalPrice)))
-                        .addContainerGap())))
+                                .addComponent(btnPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(txfBillTotalPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         pnBillLayout.setVerticalGroup(
             pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBillLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txfPayment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbBillCustomerName)
-                    .addComponent(txfBillCustname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txfBillPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbBillPhoneNum))
-                .addGap(12, 12, 12)
-                .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbBillEmployeeName)
-                    .addComponent(txfBillEmployeeName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(28, 28, 28)
                 .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnBillLayout.createSequentialGroup()
-                        .addComponent(lbBillProductName)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(pnBillLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txfBillOrderDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbBillOrderDate))
-                        .addGap(47, 47, 47)))
-                .addGap(26, 26, 26)
-                .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbBillQuantity, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txfBillQuantity, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbBillTotalPrice, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txfBillTotalPrice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addComponent(btnPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                    .addComponent(lbBillTotalPrice)
+                    .addComponent(txfBillTotalPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(btnPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         txfAddOrderDetail.setEditable(false);
@@ -442,7 +347,7 @@ public class ListOrder extends javax.swing.JFrame {
 
         btnAddToListOrder.setText("Thêm vào đơn hàng");
 
-        jButton5.setText("Sửa");
+        btnOrderUpdate.setText("Sửa");
 
         jLabel2.setText("Mã chi tiết đơn hàng");
 
@@ -477,7 +382,7 @@ public class ListOrder extends javax.swing.JFrame {
                         .addGap(149, 149, 149)
                         .addComponent(btnAddToListOrder)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnOrderUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(76, Short.MAX_VALUE))
         );
         pnAddOrderDetailLayout.setVerticalGroup(
@@ -515,7 +420,7 @@ public class ListOrder extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnAddOrderDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnAddToListOrder, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnOrderUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -527,20 +432,18 @@ public class ListOrder extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnListOrderBack)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnListOrderBack))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(142, 142, 142)
                         .addComponent(pnOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(149, 149, 149))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                         .addComponent(pnAddOrderDetail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(63, 63, 63)))
-                .addComponent(pnBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addGap(428, 428, 428))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -553,11 +456,11 @@ public class ListOrder extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pnBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(pnOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(109, 109, 109)
-                                .addComponent(pnAddOrderDetail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(pnAddOrderDetail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(pnBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 33, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -573,12 +476,11 @@ public class ListOrder extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txfPaymentActionPerformed
 
-    private void txfBillQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfBillQuantityActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txfBillQuantityActionPerformed
-
     private void btnPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaymentActionPerformed
         // TODO add your handling code here:
+        Payment payment = new Payment();
+        payment.setLocationRelativeTo(null);
+        payment.setVisible(true);
     }//GEN-LAST:event_btnPaymentActionPerformed
 
     private void btnListOrderBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListOrderBackActionPerformed
@@ -628,25 +530,17 @@ public class ListOrder extends javax.swing.JFrame {
     private javax.swing.JButton btnAddToBill;
     private javax.swing.JButton btnAddToListOrder;
     private javax.swing.JButton btnListOrderBack;
+    private javax.swing.JButton btnListOrderDelete;
+    private javax.swing.JButton btnListOrderUpdate;
+    private javax.swing.JButton btnOrderDelete;
+    private javax.swing.JButton btnOrderUpdate;
     private javax.swing.JButton btnPayment;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField20;
-    private javax.swing.JLabel lbBillCustomerName;
-    private javax.swing.JLabel lbBillEmployeeName;
-    private javax.swing.JLabel lbBillOrderDate;
-    private javax.swing.JLabel lbBillPhoneNum;
-    private javax.swing.JLabel lbBillProductName;
-    private javax.swing.JLabel lbBillQuantity;
     private javax.swing.JLabel lbBillTotalPrice;
     private javax.swing.JLabel lbIDProduct;
     private javax.swing.JLabel lbIDProduct1;
@@ -665,11 +559,6 @@ public class ListOrder extends javax.swing.JFrame {
     private javax.swing.JTable tblListBill;
     private javax.swing.JTable tblListOrder;
     private javax.swing.JTextField txfAddOrderDetail;
-    private javax.swing.JTextField txfBillCustname;
-    private javax.swing.JTextField txfBillEmployeeName;
-    private javax.swing.JTextField txfBillOrderDate;
-    private javax.swing.JTextField txfBillPhoneNum;
-    private javax.swing.JTextField txfBillQuantity;
     private javax.swing.JTextField txfBillTotalPrice;
     private javax.swing.JTextField txfListBill;
     private javax.swing.JTextField txfOrder;

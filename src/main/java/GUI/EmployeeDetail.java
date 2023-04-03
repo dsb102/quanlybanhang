@@ -43,31 +43,24 @@ public class EmployeeDetail extends javax.swing.JFrame {
         btnBackEmployee = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        List<Employee> customers = new ArrayList<>();
-        customers = employeeService.getAll();
-        DefaultTableModel model = new DefaultTableModel();
-        for (String s : new String [] {
-                "STT", "ID Nhân viên", "Tên nhân viên", "SĐT", "Giới tính", "Email", "Địa chỉ", "Ngày sinh", "Mức lương"
-        }) {
-            model.addColumn(s);
-        }
 
-        for (Employee customer : customers) {
-            model.addRow(new Object[]{customers.indexOf(customer)+1, customer.getEmployeeId(),
-                    customer.getEmployeeName(), customer.getPhoneNumber(), customer.getGender(),
-                    customer.getEmail(), customer.getAddress(), customer.getDateOfBirth(), customer.getSalary()});
-        }
-
-        tblListEmployee.setModel(model);
-
-
+        tblListEmployee.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "STT", "ID Nhân viên", "Tên nhân viên", "Giới tính", "Ngày sinh", "SĐT", "Email", "Địa chỉ", "Mức lương"
+            }
+        ));
         tblListEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(tblListEmployee);
 
         txfListEmployee.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txfListEmployee.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txfListEmployee.setText("Danh sách nhân viên");
-        txfListEmployee.setEditable(false);
 
         javax.swing.GroupLayout pnListEmployeeLayout = new javax.swing.GroupLayout(pnListEmployee);
         pnListEmployee.setLayout(pnListEmployeeLayout);
