@@ -29,7 +29,7 @@ public class CustomerDetail extends javax.swing.JFrame {
 //    public CustomerDetail() {
 //        setData();
 //    }
-    
+
     public void setData() {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
