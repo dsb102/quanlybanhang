@@ -29,95 +29,95 @@ public class CustomerDetail extends javax.swing.JFrame {
 //    public CustomerDetail() {
 //        setData();
 //    }
-    
-    public void setData() {
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblListCustomer = new javax.swing.JTable();
-        txfListCustomer = new javax.swing.JTextField();
-        btnBackCustomer = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        List<Customer> customers = new ArrayList<>();
-        customers = customerService.getAllCustomers();
-        DefaultTableModel model = new DefaultTableModel();
-        for (String s : new String[]{
-            "STT", "Mã KH", "Tên KH", "SĐT", "Giới tính", "Email", "Địa chỉ", "Ngày sinh"
-        }) {
-            model.addColumn(s);
-        }
-
-        for (Customer customer : customers) {
-            model.addRow(new Object[]{customers.indexOf(customer)+1, customer.getCustomerId(),
-                customer.getCustomerName(), customer.getPhoneNumber(), customer.getGender(),
-                customer.getEmail(), customer.getAddress(), customer.getDateOfBirth()});
-        }
-        
-        tblListCustomer.setModel(model);
-        
-        tblListCustomer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane1.setViewportView(tblListCustomer);
-
-        txfListCustomer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txfListCustomer.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txfListCustomer.setText("Danh sách khách hàng");
-        txfListCustomer.setEditable(false);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txfListCustomer)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1039, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txfListCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        btnBackCustomer.setText("Quay lại");
-        btnBackCustomer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackCustomerActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnBackCustomer))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnBackCustomer)
-                .addGap(28, 28, 28)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
-        );
-
-        pack();
-    }
+//    
+//    public void setData() {
+//        jPanel3 = new javax.swing.JPanel();
+//        jScrollPane1 = new javax.swing.JScrollPane();
+//        tblListCustomer = new javax.swing.JTable();
+//        txfListCustomer = new javax.swing.JTextField();
+//        btnBackCustomer = new javax.swing.JButton();
+//
+//        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+//
+//        List<Customer> customers = new ArrayList<>();
+//        customers = customerService.getAllCustomers();
+//        DefaultTableModel model = new DefaultTableModel();
+//        for (String s : new String[]{
+//            "STT", "Mã KH", "Tên KH", "SĐT", "Giới tính", "Email", "Địa chỉ", "Ngày sinh"
+//        }) {
+//            model.addColumn(s);
+//        }
+//
+//        for (Customer customer : customers) {
+//            model.addRow(new Object[]{customers.indexOf(customer)+1, customer.getCustomerId(),
+//                customer.getCustomerName(), customer.getPhoneNumber(), customer.getGender(),
+//                customer.getEmail(), customer.getAddress(), customer.getDateOfBirth()});
+//        }
+//        
+//        tblListCustomer.setModel(model);
+//        
+//        tblListCustomer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+//        jScrollPane1.setViewportView(tblListCustomer);
+//
+//        txfListCustomer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+//        txfListCustomer.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+//        txfListCustomer.setText("Danh sách khách hàng");
+//        txfListCustomer.setEditable(false);
+//
+//        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+//        jPanel3.setLayout(jPanel3Layout);
+//        jPanel3Layout.setHorizontalGroup(
+//            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGroup(jPanel3Layout.createSequentialGroup()
+//                .addContainerGap()
+//                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//                    .addComponent(txfListCustomer)
+//                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1039, Short.MAX_VALUE))
+//                .addContainerGap())
+//        );
+//        jPanel3Layout.setVerticalGroup(
+//            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGroup(jPanel3Layout.createSequentialGroup()
+//                .addContainerGap()
+//                .addComponent(txfListCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+//                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+//                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+//                .addContainerGap())
+//        );
+//
+//        btnBackCustomer.setText("Quay lại");
+//        btnBackCustomer.addActionListener(new java.awt.event.ActionListener() {
+//            public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                btnBackCustomerActionPerformed(evt);
+//            }
+//        });
+//
+//        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+//        getContentPane().setLayout(layout);
+//        layout.setHorizontalGroup(
+//            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGroup(layout.createSequentialGroup()
+//                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//                    .addGroup(layout.createSequentialGroup()
+//                        .addContainerGap()
+//                        .addComponent(btnBackCustomer))
+//                    .addGroup(layout.createSequentialGroup()
+//                        .addGap(23, 23, 23)
+//                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+//                .addContainerGap(47, Short.MAX_VALUE))
+//        );
+//        layout.setVerticalGroup(
+//            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+//            .addGroup(layout.createSequentialGroup()
+//                .addContainerGap()
+//                .addComponent(btnBackCustomer)
+//                .addGap(28, 28, 28)
+//                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+//                .addContainerGap(64, Short.MAX_VALUE))
+//        );
+//
+//        pack();
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -153,6 +153,7 @@ public class CustomerDetail extends javax.swing.JFrame {
         tblListCustomer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(tblListCustomer);
 
+        txfListCustomer.setEditable(false);
         txfListCustomer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txfListCustomer.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txfListCustomer.setText("Danh sách khách hàng");
@@ -199,7 +200,7 @@ public class CustomerDetail extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(8, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddCustomer)
                     .addComponent(btnUpdateCustomer)
@@ -237,7 +238,7 @@ public class CustomerDetail extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnBackCustomer)
-                .addGap(47, 47, 47)
+                .addGap(63, 63, 63)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(102, Short.MAX_VALUE))
         );
@@ -254,7 +255,7 @@ public class CustomerDetail extends javax.swing.JFrame {
 
     private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
         // TODO add your handling code here:
-        EditCustomer edit = new EditCustomer();
+        AddCustomer edit = new AddCustomer();
         edit.setVisible(true);
     }//GEN-LAST:event_btnAddCustomerActionPerformed
 
@@ -266,9 +267,6 @@ public class CustomerDetail extends javax.swing.JFrame {
 
     private void btnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCustomerActionPerformed
         // TODO add your handling code here:
-        EditCustomer edit = new EditCustomer();
-        edit.setLocationRelativeTo(null);
-        edit.setVisible(true);
     }//GEN-LAST:event_btnDeleteCustomerActionPerformed
 
     /**
