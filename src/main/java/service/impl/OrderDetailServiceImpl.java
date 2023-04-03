@@ -18,6 +18,11 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     }
 
     @Override
+    public List<OrderDetail> findAllByOrderId(int id) {
+        return orderDetailDAO.findAllById(id);
+    }
+
+    @Override
     public boolean createOrderDetail(OrderDetail orderDetail) {
         boolean isSuccess = orderDetailDAO.createOrderDetail(orderDetail);
         orderDAO.updateTotalPrice(orderDetail.getOrderId());
@@ -42,5 +47,10 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     @Override
     public OrderDetail findById(int id) {
         return orderDetailDAO.findById(id);
+    }
+
+    @Override
+    public int countQuantityByDetailAndProductId(int orderId, int productId) {
+        return orderDetailDAO.getTotalQuantitySpecifiedProductByDetailId(orderId, productId);
     }
 }

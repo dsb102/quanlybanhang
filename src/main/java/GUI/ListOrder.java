@@ -4,6 +4,15 @@
  */
 package GUI;
 
+import model.OrderDetail;
+import model.Orders;
+import service.*;
+import service.impl.*;
+
+import javax.swing.table.DefaultTableModel;
+import java.awt.event.ActionEvent;
+import java.util.List;
+
 /**
  *
  * @author hi
@@ -13,6 +22,17 @@ public class ListOrder extends javax.swing.JFrame {
     /**
      * Creates new form ListOrder1
      */
+
+    private OrderService orderService = new OrderServiceImpl();
+
+    private CustomerService customerService = new CustomerServiceImpl();
+
+    private EmployeeService employeeService = new EmployeeServiceImpl();
+
+    private OrderDetailService orderDetailService = new OrderDetailServiceImpl();
+
+    private ProductService productService = new ProductServiceImpl();
+
     public ListOrder() {
         initComponents();
     }
@@ -83,17 +103,30 @@ public class ListOrder extends javax.swing.JFrame {
             }
         });
 
-        tblListBill.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
+        btnAddToListOrder.addActionListener(evt -> addToListOrderDetail(evt));
+
+        DefaultTableModel model = new DefaultTableModel();
+        for (String s : new String [] {
                 "STT", "Mã đơn hàng", "Tên NV", "Tên KH", "Tổng giá", "Ngày tạo", "Trạng thái"
-            }
-        ));
+        }) {
+            model.addColumn(s);
+        }
+
+        List<Orders> orders = orderService.getAllOrder();
+
+        for (Orders order : orders) {
+            model.addRow(new Object[] {
+                    orders.indexOf(order) + 1,
+                    order.getOrderId(),
+                    order.getEmployeeId() + " - " + employeeService.findEmployeeById(order.getEmployeeId()).getEmployeeName(),
+                    order.getCustomerId() + " - " + customerService.getCustomerById(order.getCustomerId()).getCustomerName(),
+                    order.getTotalPrice(),
+                    order.getOrderDate(),
+                    order.isPayment() ? "Đã thanh toán" : "Chưa thanh toán"
+            });
+        }
+
+        tblListBill.setModel(model);
         jScrollPane1.setViewportView(tblListBill);
 
         txfListBill.setEditable(false);
@@ -101,6 +134,23 @@ public class ListOrder extends javax.swing.JFrame {
         txfListBill.setText("Danh sách đơn hàng");
 
         btnListOrderDelete.setText("Xóa");
+
+        tblListBill.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblListBillMouseClicked(evt);
+            }
+
+        });
+
+        btnOrderUpdate.addActionListener(evt -> updateListOrderDetail(evt));
+
+        btnAddToBill.addActionListener(evt -> addToBill(evt));
+
+        btnListOrderDelete.addActionListener(evt -> btnListOrderDeleteActionPerformed(evt));
+
+        btnOrderDelete.addActionListener(evt -> btnOrderDeleteActionPerformed(evt));
+
+        btnListOrderUpdate.addActionListener(evt -> updateOrder(evt));
 
         javax.swing.GroupLayout pnListbillLayout = new javax.swing.GroupLayout(pnListbill);
         pnListbill.setLayout(pnListbillLayout);
@@ -468,9 +518,294 @@ public class ListOrder extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void updateListOrderDetail(ActionEvent evt) {
+        OrderDetail order = new OrderDetail();
+        String idDetail = txfOrderIdProduct3.getText();
+        String idProduct = txfOrderIdProduct.getText();
+        String idOrder = txfOrderIdCustomer1.getText();
+        String idCustomer = txfOrderIdCustomer.getText();
+        String idEmployee = txfOrderIdEmployee.getText();
+        String quantity = txfOrderDate1.getText();
+        if (isNumber(idDetail, idCustomer, idEmployee, idProduct, idOrder, quantity)) {
+            int idD = Integer.parseInt(idDetail);
+            int idP = Integer.parseInt(idProduct);
+            int idO = Integer.parseInt(idOrder);
+            int idC = Integer.parseInt(idCustomer);
+            int idE = Integer.parseInt(idEmployee);
+            int quan = Integer.parseInt(quantity);
+            if (orderDetailService.findById(idD) == null) {
+                // todo: show không tìm thấy id detail
+            } else if (customerService.getCustomerById(idC) == null) {
+                // todo: show không tìm thấy id customer
+            } else if (employeeService.findEmployeeById(idE) == null) {
+                // todo: show không tìm thấy id employee
+            } else if (productService.findById(idP) == null) {
+                // todo: show không tìm thấy id sản phẩm
+            } else if (orderService.findById(idO) == null) {
+                // todo: show không tìm thấy id order
+            } else if (productService.findById(idP).getQuantity() < (quan - orderDetailService.countQuantityByDetailAndProductId(idO, idP))) {
+                // todo: show không đủ số lượng
+            } else {
+                order = new OrderDetail(idP, idO, idC, idE, quan);
+                boolean success = orderDetailService.createOrderDetail(order);
+                productService.updateQuantity(idP, productService.findById(idP).getQuantity() + (quan - orderDetailService.countQuantityByDetailAndProductId(idO, idP)));
+                if (success) {
+                    // todo: show them don hang thanh cong
+                } else {
+                    // todo: show them don hang that bai
+                }
+
+            }
+        } else {
+            // todo: show wrong format
+        }
+        refreshListOrder();
+    }
+
+    private void addToListOrderDetail(ActionEvent evt) {
+        OrderDetail order = new OrderDetail();
+        String idProduct = txfOrderIdProduct.getText();
+        String idOrder = txfOrderIdCustomer1.getText();
+        String idCustomer = txfOrderIdCustomer.getText();
+        String idEmployee = txfOrderIdEmployee.getText();
+        String quantity = txfOrderDate1.getText();
+        if (isNumber(idCustomer, idEmployee, idProduct, idOrder, quantity)) {
+            int idP = Integer.parseInt(idProduct);
+            int idO = Integer.parseInt(idOrder);
+            int idC = Integer.parseInt(idCustomer);
+            int idE = Integer.parseInt(idEmployee);
+            int quan = Integer.parseInt(quantity);
+            if (customerService.getCustomerById(idC) == null) {
+                // todo: show không tìm thấy id customer
+            } else if (employeeService.findEmployeeById(idE) == null) {
+                // todo: show không tìm thấy id employee
+            } else if (productService.findById(idP) == null) {
+                // todo: show không tìm thấy id sản phẩm
+            } else if (orderService.findById(idO) == null) {
+                // todo: show không tìm thấy id order
+            } else if (productService.findById(idP).getQuantity() < quan) {
+                int conLai = productService.findById(idP).getQuantity();
+                String name = productService.findById(idP).getProductName();
+                // todo: show chỉ còn {conLai} {name} : <chỉ còn lại 5 cái áo>
+            } else {
+                order = new OrderDetail(idP, idO, idC, idE, quan);
+                boolean success = orderDetailService.createOrderDetail(order);
+                if (success) {
+                    System.out.println("thanh cong");
+                    // todo: show them don hang thanh cong
+                } else {
+                    System.out.println("that bai");
+                    // todo: show them don hang that bai
+                }
+
+            }
+        } else {
+            // todo: show wrong format
+        }
+        refreshListOrder();
+    }
+
+    private void refreshListBill() {
+        DefaultTableModel model = new DefaultTableModel();
+        for (String s : new String [] {
+                "STT", "Mã đơn hàng", "Tên NV", "Tên KH", "Tổng giá", "Ngày tạo", "Trạng thái"
+        }) {
+            model.addColumn(s);
+        }
+
+        List<Orders> orders = orderService.getAllOrder();
+
+        for (Orders order : orders) {
+            model.addRow(new Object[] {
+                    orders.indexOf(order) + 1,
+                    order.getOrderId(),
+                    order.getEmployeeId() + " - " + employeeService.findEmployeeById(order.getEmployeeId()).getEmployeeName(),
+                    order.getCustomerId() + " - " + customerService.getCustomerById(order.getCustomerId()).getCustomerName(),
+                    order.getTotalPrice(),
+                    order.getOrderDate(),
+                    order.isPayment() ? "Đã thanh toán" : "Chưa thanh toán"
+            });
+        }
+
+        tblListBill.setModel(model);
+        jScrollPane1.setViewportView(tblListBill);
+    }
+
+    private void refreshListOrder() {
+        int selectedRow = tblListBill.getSelectedRow();
+//        if (selectedRow)
+        Integer value = (Integer) tblListBill.getValueAt(selectedRow, 1);
+
+        List<OrderDetail> orderDetails = orderDetailService.findAllByOrderId(value);
+
+        DefaultTableModel model = new DefaultTableModel();
+
+        for (String s : new String [] {
+                "STT", "Mã chi tiết đơn hàng", "Mã SP", "Mã đơn hàng", "Tên SP", "Số lượng", "Đơn giá"
+        }) {
+            model.addColumn(s);
+        }
+
+        for (OrderDetail orderDetail : orderDetails) {
+            model.addRow(new Object[]{
+                    orderDetails.indexOf(orderDetail),
+                    orderDetail.getDetailId(),
+                    orderDetail.getProductId(),
+                    orderDetail.getOrderId(),
+                    orderDetail.getProductId() + " - " + productService.findById(orderDetail.getProductId()).getProductName(),
+                    orderDetail.getQuantity(),
+                    orderDetail.getUnitPrice()
+            });
+        }
+
+        tblListOrder.setModel(model);
+        jScrollPane2.setViewportView(tblListOrder);
+    }
+
+    private void updateOrder(ActionEvent evt) {
+        Orders order = new Orders();
+        String idOrder = txfOrderIdProduct2.getText();
+        String idCustomer = txfOrderIdCustomer.getText();
+        String idEmployee = txfOrderIdEmployee.getText();
+        if (isNumber(idCustomer, idEmployee, idOrder)) {
+            int idO = Integer.parseInt(idOrder);
+            int idC = Integer.parseInt(idCustomer);
+            int idE = Integer.parseInt(idEmployee);
+            if (customerService.getCustomerById(idC) == null) {
+                // todo: show không tìm thấy id customer
+            } else if (employeeService.findEmployeeById(idE) == null) {
+                // todo: show không tìm thấy id employee
+            } else if (orderService.findById(idO) == null) {
+                // todo: show không tìm thấy id Order
+            }else {
+                order = new Orders(idO, idC, idE);
+                boolean success = orderService.updateOrder(order);
+                if (success) {
+                    // todo: show them don hang thanh cong
+                } else {
+                    // todo: show them don hang that bai
+                }
+
+            }
+        } else {
+            // todo: show wrong format
+        }
+        refreshListBill();
+    }
+
+    private void addToBill(ActionEvent evt) {
+        Orders order = new Orders();
+//        String idProduct = txfOrderIdProduct.getText();
+        String idCustomer = txfOrderIdCustomer.getText();
+        String idEmployee = txfOrderIdEmployee.getText();
+        if (isNumber(idCustomer, idEmployee)) {
+            int idC = Integer.parseInt(idCustomer);
+            int idE = Integer.parseInt(idEmployee);
+            if (customerService.getCustomerById(idC) == null) {
+                // todo: show không tìm thấy id customer
+            } else if (employeeService.findEmployeeById(idE) == null) {
+                // todo: show không tìm thấy id employee
+            } else {
+                order = new Orders(idC, idE);
+                boolean success = orderService.createOrder(order);
+                if (success) {
+                    // todo: show them don hang thanh cong
+                } else {
+                    // todo: show them don hang that bai
+                }
+
+            }
+        } else {
+            // todo: show wrong format
+        }
+        refreshListBill();
+    }
+
+    private boolean notEmpty(String ...status) {
+        for (String s : status) {
+            if (s.isEmpty()) return false;
+        }
+        return true;
+    }
+
+    private boolean isNumber(String ...ss) {
+        for (String s : ss) {
+            if (!isNumber(s)) return false;
+        }
+        return true;
+    }
+
+
+    private boolean isNumber(String s) {
+        try {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private void btnOrderDeleteActionPerformed(ActionEvent evt) {
+        int selectedRow = tblListOrder.getSelectedRow();
+        int detailId = (Integer) tblListOrder.getValueAt(selectedRow, 1);
+        boolean removeSuccess = orderDetailService.deleteOrderDetail(detailId);
+        if (removeSuccess) {
+            int idP = (Integer) tblListOrder.getValueAt(selectedRow, 2);
+            int quan = (Integer) tblListOrder.getValueAt(selectedRow, 5);
+            productService.updateQuantity(idP, productService.findById(idP).getQuantity() + quan);
+            // todo: show info success
+        } else {
+            // todo: show info fail
+        }
+        refreshListOrder();
+    }
+
+    private void btnListOrderDeleteActionPerformed(ActionEvent evt) {
+        int selectedRow = tblListBill.getSelectedRow();
+        boolean removeSuccess = orderService.removeOrder((Integer) tblListBill.getValueAt(selectedRow, 1));
+        if (removeSuccess) {
+            // todo: show info success
+        } else {
+            // todo: show đơn hàng đã thanh toán không được xóa
+        }
+        refreshListBill();
+    }
+
     private void btnAddToBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToBillActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddToBillActionPerformed
+
+    private void tblListBillMouseClicked(java.awt.event.MouseEvent evt) {
+        int selectedRow = tblListBill.getSelectedRow();
+
+        Integer value = (Integer) tblListBill.getValueAt(selectedRow, 1);
+
+        List<OrderDetail> orderDetails = orderDetailService.findAllByOrderId(value);
+
+        DefaultTableModel model = new DefaultTableModel();
+
+        for (String s : new String [] {
+                "STT", "Mã chi tiết đơn hàng", "Mã SP", "Mã đơn hàng", "Tên SP", "Số lượng", "Đơn giá"
+        }) {
+            model.addColumn(s);
+        }
+
+        for (OrderDetail orderDetail : orderDetails) {
+            model.addRow(new Object[]{
+                    orderDetails.indexOf(orderDetail),
+                    orderDetail.getDetailId(),
+                    orderDetail.getProductId(),
+                    orderDetail.getOrderId(),
+                    orderDetail.getProductId() + " - " + productService.findById(orderDetail.getProductId()).getProductName(),
+                    orderDetail.getQuantity(),
+                    orderDetail.getUnitPrice()
+            });
+        }
+
+        tblListOrder.setModel(model);
+        jScrollPane2.setViewportView(tblListOrder);
+
+    }
 
     private void txfPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfPaymentActionPerformed
         // TODO add your handling code here:

@@ -105,7 +105,47 @@ public class OrderDetailDAO extends DBContext {
         }
     }
 
+    public List<OrderDetail> findAllById(int ids) {
+        List<OrderDetail> orderDetails = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQuery.findAllOrderDetailByOrderId());
+            preparedStatement.setInt(1, ids);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("detailId");
+                int order = resultSet.getInt("orderId");
+                int product = resultSet.getInt("productId");
+                int quantity = resultSet.getInt("quantity");
+                double price = resultSet.getDouble("unitPrice");
+                OrderDetail orderDetail = new OrderDetail(id, order, product, quantity, price);
+                orderDetails.add(orderDetail);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return orderDetails;
+    }
+
+    public int getTotalQuantitySpecifiedProductByDetailId(int orderId, int productId) {
+        List<OrderDetail> orderDetails = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQuery.sumQuantityOrderDetailSpecifiedProduct());
+            preparedStatement.setInt(1, orderId);
+            preparedStatement.setInt(2, productId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int quantity = resultSet.getInt("quantity");
+                return quantity;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+        return 0;
+    }
+
     public static void main(String[] args) {
-        System.out.println(new OrderDetailDAO().findById(1));
+        System.out.println(new OrderDetailDAO().getTotalQuantitySpecifiedProductByDetailId(1, 1));
     }
 }
