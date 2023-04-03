@@ -19,19 +19,23 @@ public class SQLQuery {
     }
     
     public static String removeCustomerById() {
-        return "UPDATE Customer SET stauts = 0 WHERE customerId = ?";
+        return "UPDATE Customer SET status = 0 WHERE customerId = ?";
     }
-    
+
     public static String updateCustomer() {
         return "UPDATE Customer SET customerName = ?, gender = ?, dateOfBirth = ?, phoneNumber = ?, email = ?, address = ? WHERE customerId = ?";
     }
     
     public static String addCustomer() {
-        return "INSERT INTO Customer VALUES (1, ?, ?, ?, ? ,?, ?)";
+        return "INSERT INTO Customer (customerName, gender, dateOfBirth, phoneNumber, email, address, status) VALUES (?, ?, ?, ? ,?, ?, 1)";
     }
 
     public static String getAllEmployee() {
         return "SELECT * FROM Employee";
+    }
+
+    public static String getEmployeeById() {
+        return "SELECT * FROM Employee WHERE employeeId = ?";
     }
 
     public static String getAllShipper() {
@@ -42,12 +46,20 @@ public class SQLQuery {
         return "SELECT * FROM Product";
     }
 
+    public static String findByProductId() {
+        return "SELECT * FROM Product WHERE productId = ?";
+    }
+
     public static String getProduct() {
         return "SELECT * Product WHERE productId = ?";
     }
 
     public static String getAllOrderDetail() {
         return "SELECT * FROM OrderDetail";
+    }
+
+    public static String sumQuantityOrderDetailSpecifiedProduct() {
+        return "SELECT SUM(quantity) as quantity FROM OrderDetail WHERE orderId = ? AND productId = ?";
     }
 
     public static String removeOrderDetail() {
@@ -72,11 +84,15 @@ public class SQLQuery {
     }
 
     public static String deleteOrder() {
-        return "UPDATE Orders SET status = 0 WHERE orderId = ?";
+        return "UPDATE Orders SET status = 0 WHERE orderId = ? AND payment = 0";
     }
 
     public static String updateOrder() {
         return "UPDATE Orders SET customerId = ?, employeeId = ?, orderDate = CURDATE() WHERE orderId = ?";
+    }
+
+    public static String updateQuantityProduct() {
+        return "UPDATE Product SET quantity = ? WHERE productId = ?";
     }
 
     public static String paymentOrder() {
@@ -93,5 +109,13 @@ public class SQLQuery {
 
     public static String updateTotalPrice() {
         return "UPDATE Orders SET totalPrice = (SELECT SUM(quantity * unitPrice) FROM OrderDetail WHERE orderId = ?) WHERE orderId = ?";
+    }
+
+    public static String findAllOrderDetailByOrderId() {
+        return "SELECT * FROM OrderDetail WHERE orderId = ?";
+    }
+
+    public static String updateOrderPayment() {
+        return "UPDATE Orders SET payment = ? WHERE orderId = ?";
     }
 }

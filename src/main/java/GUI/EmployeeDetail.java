@@ -23,6 +23,7 @@ public class EmployeeDetail extends javax.swing.JFrame {
      */
 
     private EmployeeService employeeService = new EmployeeServiceImpl();
+
     public EmployeeDetail() {
         initComponents();
     }
@@ -43,6 +44,7 @@ public class EmployeeDetail extends javax.swing.JFrame {
         btnBackEmployee = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         List<Employee> customers = new ArrayList<>();
         customers = employeeService.getAll();
         DefaultTableModel model = new DefaultTableModel();
@@ -60,14 +62,12 @@ public class EmployeeDetail extends javax.swing.JFrame {
 
         tblListEmployee.setModel(model);
 
-
         tblListEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(tblListEmployee);
 
         txfListEmployee.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txfListEmployee.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txfListEmployee.setText("Danh sách nhân viên");
-        txfListEmployee.setEditable(false);
 
         javax.swing.GroupLayout pnListEmployeeLayout = new javax.swing.GroupLayout(pnListEmployee);
         pnListEmployee.setLayout(pnListEmployeeLayout);

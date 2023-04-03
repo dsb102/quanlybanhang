@@ -4,7 +4,13 @@
  */
 package GUI;
 
+import model.Customer;
+import service.CustomerService;
+import service.impl.CustomerServiceImpl;
+
 import javax.swing.JOptionPane;
+import java.awt.event.ActionEvent;
+import java.sql.Date;
 
 /**
  *
@@ -15,7 +21,12 @@ public class AddCustomer extends javax.swing.JFrame {
     /**
      * Creates new form EditCustomer
      */
-    public AddCustomer() {
+
+    private CustomerService customerService = new CustomerServiceImpl();
+    private CustomerDetail customerDetail;
+
+    public AddCustomer(CustomerDetail customerDetail) {
+        this.customerDetail = customerDetail;
         initComponents();
          setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
     }
@@ -44,6 +55,8 @@ public class AddCustomer extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txfAddress = new javax.swing.JTextField();
         btnAddCustomer = new javax.swing.JButton();
+
+        btnAddCustomer.addActionListener(this::addCustomer);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -155,6 +168,43 @@ public class AddCustomer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void addCustomer(ActionEvent actionEvent) {
+        String cusName = txfCustName.getText();
+        String gender = txfCustGender.getText();
+        String dob = txfDob.getText().trim();
+        if (!dob.contains("/")) {
+            // todo: return sai định dạng
+            return;
+        }
+        String []dob1 = dob.split("/");
+        java.sql.Date date = null;
+        try {
+            date = new Date(Integer.parseInt(dob1[2]), Integer.parseInt(dob1[1]), Integer.parseInt(dob1[0]));
+
+        } catch (NumberFormatException e) {
+
+        }
+        String phoneNumber = txfPhoneNum.getText();
+        String email = txfEmail.getText();
+        String address = txfAddress.getText();
+
+        if (notEmpty(cusName, gender, phoneNumber, email, address)) {
+            Customer customer = new Customer(0, cusName, gender, date, phoneNumber, email, address);
+            customerService.addCustomer(customer);
+            // todo: add customer success
+        } else {
+            // todo: nhap sai dinh dang
+        }
+        customerDetail.refresh();
+    }
+
+    private boolean notEmpty(String ...status) {
+        for (String s : status) {
+            if (s.isEmpty()) return false;
+        }
+        return true;
+    }
+
     private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
         // luu vao DB va quay ve man hinh CustomerDetail
         JOptionPane.showConfirmDialog(this, "Thêm thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
@@ -164,38 +214,38 @@ public class AddCustomer extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AddCustomer().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(AddCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(AddCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(AddCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(AddCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new AddCustomer().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddCustomer;

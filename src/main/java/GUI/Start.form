@@ -28,7 +28,6 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnOrderManagement" max="32767" attributes="0"/>
                   <Component id="btnListEmployee" pref="211" max="32767" attributes="0"/>
-                  <Component id="btnListShipper" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnListCustomer" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnListProduct" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -43,13 +42,11 @@
               <Component id="btnListCustomer" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="btnListEmployee" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Component id="btnListShipper" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Component id="btnListProduct" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="28" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Component id="btnOrderManagement" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              <EmptySpace pref="114" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -77,14 +74,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListEmployeeActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnListShipper">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Danh s&#xe1;ch shipper"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListShipperActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnListProduct">
