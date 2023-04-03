@@ -31,8 +31,6 @@ public class AddCustomer extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         txfEditCustomer = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        txfIdCust = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txfCustName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -52,8 +50,6 @@ public class AddCustomer extends javax.swing.JFrame {
         txfEditCustomer.setEditable(false);
         txfEditCustomer.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txfEditCustomer.setText("Cập nhật danh sách khách hàng");
-
-        jLabel1.setText("Mã KH");
 
         jLabel2.setText("Tên KH");
 
@@ -84,7 +80,6 @@ public class AddCustomer extends javax.swing.JFrame {
                         .addGap(187, 187, 187)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel1)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
@@ -93,7 +88,6 @@ public class AddCustomer extends javax.swing.JFrame {
                         .addGap(51, 51, 51)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txfCustName, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txfIdCust, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txfCustGender, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txfDob, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txfAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -103,20 +97,16 @@ public class AddCustomer extends javax.swing.JFrame {
                         .addGap(274, 274, 274)
                         .addComponent(btnAddCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(262, 262, 262)
+                        .addGap(231, 231, 231)
                         .addComponent(txfEditCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(231, Short.MAX_VALUE))
+                .addContainerGap(243, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(49, 49, 49)
                 .addComponent(txfEditCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txfIdCust, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txfCustName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -142,7 +132,7 @@ public class AddCustomer extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addGap(32, 32, 32)
                 .addComponent(btnAddCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,7 +147,7 @@ public class AddCustomer extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(25, 25, 25)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -209,7 +199,6 @@ public class AddCustomer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddCustomer;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -223,7 +212,6 @@ public class AddCustomer extends javax.swing.JFrame {
     private javax.swing.JTextField txfDob;
     private javax.swing.JTextField txfEditCustomer;
     private javax.swing.JTextField txfEmail;
-    private javax.swing.JTextField txfIdCust;
     private javax.swing.JTextField txfPhoneNum;
     // End of variables declaration//GEN-END:variables
 }

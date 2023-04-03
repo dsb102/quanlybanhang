@@ -63,7 +63,7 @@ public class Payment extends javax.swing.JFrame {
 
         lbBillProductName.setText("Danh sách sản phẩm");
 
-        lbBillOrderDate.setText("Ngày đặt hàng");
+        lbBillOrderDate.setText("Ngày mua");
 
         lbBillTotalPrice.setText("Tổng tiền");
 
@@ -78,13 +78,13 @@ public class Payment extends javax.swing.JFrame {
 
         tblListProduct.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "STT", "Mã SP", "Tên SP", "Đơn giá", "Số lượng", "Tổng tiền"
+                "STT", "Tên SP", "Đơn giá", "Số lượng", "Thành tiền"
             }
         ));
         jScrollPane1.setViewportView(tblListProduct);
@@ -94,45 +94,40 @@ public class Payment extends javax.swing.JFrame {
         pnBillLayout.setHorizontalGroup(
             pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBillLayout.createSequentialGroup()
-                .addGap(266, 266, 266)
-                .addComponent(txfPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(199, Short.MAX_VALUE))
-            .addGroup(pnBillLayout.createSequentialGroup()
                 .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(pnBillLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(pnBillLayout.createSequentialGroup()
+                                    .addGap(4, 4, 4)
+                                    .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lbBillCustomerName)
+                                        .addComponent(lbBillPhoneNum)
+                                        .addComponent(lbBillEmployeeName))
+                                    .addGap(50, 50, 50)
+                                    .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txfBillPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txfBillEmployeeName, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txfBillCustname, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lbBillProductName)
+                                .addGroup(pnBillLayout.createSequentialGroup()
+                                    .addGap(20, 20, 20)
+                                    .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lbBillOrderDate)
+                                        .addComponent(lbBillTotalPrice))
+                                    .addGap(37, 37, 37)
+                                    .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txfBillOrderDate, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                                        .addComponent(txfBillTotalPrice)))))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pnBillLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(txfPayment)))
                     .addGroup(pnBillLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
-                    .addGroup(pnBillLayout.createSequentialGroup()
-                        .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnBillLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnBillLayout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(lbBillCustomerName)
-                                            .addComponent(lbBillPhoneNum)
-                                            .addComponent(lbBillEmployeeName))
-                                        .addGap(50, 50, 50)
-                                        .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txfBillPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txfBillEmployeeName, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txfBillCustname, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(lbBillProductName)
-                                    .addGroup(pnBillLayout.createSequentialGroup()
-                                        .addGap(20, 20, 20)
-                                        .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(lbBillOrderDate)
-                                            .addComponent(lbBillTotalPrice))
-                                        .addGap(37, 37, 37)
-                                        .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txfBillOrderDate, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                                            .addComponent(txfBillTotalPrice)))))
-                            .addGroup(pnBillLayout.createSequentialGroup()
-                                .addGap(343, 343, 343)
-                                .addComponent(btnPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(171, 171, 171)
+                        .addComponent(btnPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         pnBillLayout.setVerticalGroup(
             pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,9 +158,9 @@ public class Payment extends javax.swing.JFrame {
                 .addGroup(pnBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbBillTotalPrice)
                     .addComponent(txfBillTotalPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -173,16 +168,16 @@ public class Payment extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(16, 16, 16)
                 .addComponent(pnBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap()
                 .addComponent(pnBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
