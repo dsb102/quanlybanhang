@@ -4,10 +4,13 @@
  */
 package GUI;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import model.Customer;
 import service.CustomerService;
@@ -168,8 +171,14 @@ public class CustomerDetail extends javax.swing.JFrame {
         String gender = edit.getTxfCustGender().getText();
         String dob = edit.getTxfDob().getText().trim();
         if (!dob.contains("/")) {
-            // todo: return sai định dạng
-            return;
+            //return sai định dạng
+            Component[] components = jPanel3.getComponents();
+            for (Component component : components) {
+                if (component instanceof JTextField) {
+                    ((JTextField) component).setText("");
+                }
+            }
+            JOptionPane.showConfirmDialog(this, "Nhập sai định dạng ngày sinh", "Thông báo", JOptionPane.WARNING_MESSAGE);
         }
         String []dob1 = dob.split("/");
         java.sql.Date date = null;
@@ -186,9 +195,11 @@ public class CustomerDetail extends javax.swing.JFrame {
         if (notEmpty(cusName, gender, phoneNumber, email, address)) {
             Customer customer = new Customer(0, cusName, gender, date, phoneNumber, email, address);
             customerService.addCustomer(customer);
-            // todo: add customer success
+            //add customer success
+            JOptionPane.showConfirmDialog(this, "Thêm mới thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
         } else {
-            // todo: nhap sai dinh dang
+            //nhap sai dinh dang
+            JOptionPane.showConfirmDialog(this, "Các trường không được để trống", "Thông báo", JOptionPane.WARNING_MESSAGE);
         }
 
     }
@@ -205,9 +216,11 @@ public class CustomerDetail extends javax.swing.JFrame {
         int customerId = (Integer)  tblListCustomer.getValueAt(index, 1);
         boolean isSuccess = customerService.removeCustomer(customerId);
         if (isSuccess) {
-            // todo: xoa thanh cong
+            //xoa thanh cong
+            JOptionPane.showConfirmDialog(this, "Xóa thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
         } else {
-            // todo: xoa that bai
+            //xoa that bai
+            JOptionPane.showConfirmDialog(this, "Xóa thất bại", "Thông báo", JOptionPane.DEFAULT_OPTION);
         }
         refresh();
     }
@@ -244,7 +257,7 @@ public class CustomerDetail extends javax.swing.JFrame {
         edit1.setVisible(true);
     }//GEN-LAST:event_btnAddCustomerActionPerformed
 
-    EditCustomer edit = null;
+    EditCustomer edit;
     private void btnUpdateCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateCustomerActionPerformed
         // TODO add your handling code here:
         int index = tblListCustomer.getSelectedRow();

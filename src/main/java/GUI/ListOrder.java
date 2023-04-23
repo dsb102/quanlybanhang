@@ -13,6 +13,7 @@ import service.impl.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -508,30 +509,39 @@ public class ListOrder extends javax.swing.JFrame {
             int idE = Integer.parseInt(idEmployee);
             int quan = Integer.parseInt(quantity);
             if (orderDetailService.findById(idD) == null) {
-                // todo: show không tìm thấy id detail
+                //show không tìm thấy id detail
+                JOptionPane.showConfirmDialog(this, "Không tìm thấy id chi tiết đơn hàng", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else if (customerService.getCustomerById(idC) == null) {
-                // todo: show không tìm thấy id customer
+                //show không tìm thấy id customer
+                JOptionPane.showConfirmDialog(this, "Không tìm thấy id khách hàng", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else if (employeeService.findEmployeeById(idE) == null) {
-                // todo: show không tìm thấy id employee
+                //show không tìm thấy id employee
+                JOptionPane.showConfirmDialog(this, "Không tìm thấy id nhân viên", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else if (productService.findById(idP) == null) {
-                // todo: show không tìm thấy id sản phẩm
+                //show không tìm thấy id sản phẩm
+                JOptionPane.showConfirmDialog(this, "Không tìm thấy id sản phẩm", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else if (orderService.findById(idO) == null) {
-                // todo: show không tìm thấy id order
+                //show không tìm thấy id order
+                JOptionPane.showConfirmDialog(this, "Không tìm thấy id đơn hàng", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else if (productService.findById(idP).getQuantity() < (quan - orderDetailService.countQuantityByDetailAndProductId(idO, idP))) {
-                // todo: show không đủ số lượng
+                //show không đủ số lượng
+                JOptionPane.showConfirmDialog(this, "Không đủ số lượng", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else {
                 order = new OrderDetail(idP, idO, idC, idE, quan);
                 boolean success = orderDetailService.createOrderDetail(order);
                 productService.updateQuantity(idP, productService.findById(idP).getQuantity() + (quan - orderDetailService.countQuantityByDetailAndProductId(idO, idP)));
                 if (success) {
-                    // todo: show them don hang thanh cong
+                    //show them don hang thanh cong
+                    JOptionPane.showConfirmDialog(this, "Thêm mới thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
                 } else {
-                    // todo: show them don hang that bai
+                    //show them don hang that bai
+                    JOptionPane.showConfirmDialog(this, "Thêm mới thất bại", "Thông báo", JOptionPane.DEFAULT_OPTION);
                 }
 
             }
         } else {
-            // todo: show wrong format
+            //show wrong format
+            JOptionPane.showConfirmDialog(this, "Các trường id phải là dạng số", "Nhập sai định dạng", JOptionPane.DEFAULT_OPTION);
         }
         refreshListOrder();
     }
@@ -547,8 +557,10 @@ public class ListOrder extends javax.swing.JFrame {
             int quan = Integer.parseInt(quantity);
             if (productService.findById(idP) == null) {
                 // todo: show không tìm thấy id sản phẩm
+                JOptionPane.showConfirmDialog(this, "Không tìm thấy id sản phẩm", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else if (orderService.findById(idO) == null) {
                 // todo: show không tìm thấy id order
+                JOptionPane.showConfirmDialog(this, "Không tìm thấy id đơn hàng", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else if (productService.findById(idP).getQuantity() < quan) {
                 int conLai = productService.findById(idP).getQuantity();
                 String name = productService.findById(idP).getProductName();
@@ -559,14 +571,17 @@ public class ListOrder extends javax.swing.JFrame {
                 if (success) {
                     System.out.println("thanh cong");
                     // todo: show them don hang thanh cong
+                    JOptionPane.showConfirmDialog(this, "Thêm mới thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
                 } else {
                     System.out.println("that bai");
                     // todo: show them don hang that bai
+                    JOptionPane.showConfirmDialog(this, "Thêm mới thất bại", "Thông báo", JOptionPane.DEFAULT_OPTION);
                 }
 
             }
         } else {
             // todo: show wrong format
+            JOptionPane.showConfirmDialog(this, "Các trường id phải là dạng số", "Nhập sai định dạng", JOptionPane.DEFAULT_OPTION);
         }
         refreshListOrder();
         refreshListBill();
@@ -640,22 +655,28 @@ public class ListOrder extends javax.swing.JFrame {
             int idE = Integer.parseInt(idEmployee);
             if (customerService.getCustomerById(idC) == null) {
                 // todo: show không tìm thấy id customer
+                JOptionPane.showConfirmDialog(this, "Không tìm thấy id khách hàng", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else if (employeeService.findEmployeeById(idE) == null) {
                 // todo: show không tìm thấy id employee
+                JOptionPane.showConfirmDialog(this, "Không tìm thấy id nhân viên", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else if (orderService.findById(idO) == null) {
                 // todo: show không tìm thấy id Order
+                JOptionPane.showConfirmDialog(this, "Không tìm thấy id đơn hàng", "Thông báo", JOptionPane.DEFAULT_OPTION);
             }else {
                 order = new Orders(idO, idC, idE);
                 boolean success = orderService.updateOrder(order);
                 if (success) {
                     // todo: show them don hang thanh cong
+                    JOptionPane.showConfirmDialog(this, "Thêm mới thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
                 } else {
                     // todo: show them don hang that bai
+                    JOptionPane.showConfirmDialog(this, "Thêm mới thất bại", "Thông báo", JOptionPane.DEFAULT_OPTION);
                 }
 
             }
         } else {
             // todo: show wrong format
+            JOptionPane.showConfirmDialog(this, "Các trường id phải là dạng số", "Nhập sai định dạng", JOptionPane.DEFAULT_OPTION);
         }
         refreshListBill();
     }
@@ -670,20 +691,25 @@ public class ListOrder extends javax.swing.JFrame {
             int idE = Integer.parseInt(idEmployee);
             if (customerService.getCustomerById(idC) == null) {
                 // todo: show không tìm thấy id customer
+                JOptionPane.showConfirmDialog(this, "Không tìm thấy id khách hàng", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else if (employeeService.findEmployeeById(idE) == null) {
                 // todo: show không tìm thấy id employee
+                JOptionPane.showConfirmDialog(this, "Không tìm thấy id nhân viên", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else {
                 order = new Orders(idC, idE);
                 boolean success = orderService.createOrder(order);
                 if (success) {
                     // todo: show them don hang thanh cong
+                    JOptionPane.showConfirmDialog(this, "Thêm mới thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
                 } else {
                     // todo: show them don hang that bai
+                    JOptionPane.showConfirmDialog(this, "Thêm mới thất bại", "Thông báo", JOptionPane.DEFAULT_OPTION);
                 }
 
             }
         } else {
             // todo: show wrong format
+            JOptionPane.showConfirmDialog(this, "Các trường id phải là dạng số", "Nhập sai định dạng", JOptionPane.DEFAULT_OPTION);
         }
         refreshListBill();
     }
@@ -721,8 +747,10 @@ public class ListOrder extends javax.swing.JFrame {
         if (removeSuccess) {
             productService.updateQuantity(idP, productService.findById(idP).getQuantity() + quan);
             // todo: show info success
+            JOptionPane.showConfirmDialog(this, "Đơn hàng đã được xóa", "Xóa thành công", JOptionPane.DEFAULT_OPTION);
         } else {
             // todo: show info fail
+            JOptionPane.showConfirmDialog(this, "Xóa thất bại", "Thông báo", JOptionPane.DEFAULT_OPTION);
         }
         refreshListOrder();
     }
@@ -731,10 +759,11 @@ public class ListOrder extends javax.swing.JFrame {
         int selectedRow = tblListBill.getSelectedRow();
         boolean removeSuccess = orderService.removeOrder((Integer) tblListBill.getValueAt(selectedRow, 1));
         if (removeSuccess) {
-
             // todo: show info success
+            JOptionPane.showConfirmDialog(this, "Đơn hàng đã được xóa", "Xóa thành công", JOptionPane.DEFAULT_OPTION);
         } else {
             // todo: show đơn hàng đã thanh toán không được xóa
+            JOptionPane.showConfirmDialog(this, "Đơn hàng đã thanh toán không được xóa", "Xóa thất bại", JOptionPane.DEFAULT_OPTION);
         }
         refreshListBill();
     }
@@ -820,6 +849,7 @@ public class ListOrder extends javax.swing.JFrame {
 
         } else {
             // todo: đã thanh toán rồi
+            JOptionPane.showConfirmDialog(this, "Đơn hàng đã được thanh toán", "Thất bại", JOptionPane.DEFAULT_OPTION);
         }
 
 
