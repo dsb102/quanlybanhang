@@ -172,12 +172,12 @@ public class AddCustomer extends javax.swing.JFrame {
         String cusName = txfCustName.getText();
         String gender = txfCustGender.getText();
         String dob = txfDob.getText().trim();
-        if (!dob.contains("/")) {
+        if (!dob.contains("-")) {
             // todo: return sai định dạng
             JOptionPane.showConfirmDialog(this, "Nhập sai định dạng ngày sinh", "Thông báo", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        String []dob1 = dob.split("/");
+        String []dob1 = dob.split("-");
         java.sql.Date date = null;
         try {
             date = new Date(Integer.parseInt(dob1[2]), Integer.parseInt(dob1[1]), Integer.parseInt(dob1[0]));

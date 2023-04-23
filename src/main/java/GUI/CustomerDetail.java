@@ -170,7 +170,7 @@ public class CustomerDetail extends javax.swing.JFrame {
         String cusName = edit.getTxfCustName().getText();
         String gender = edit.getTxfCustGender().getText();
         String dob = edit.getTxfDob().getText().trim();
-        if (!dob.contains("/")) {
+        if (!dob.contains("-")) {
             //return sai định dạng
             Component[] components = jPanel3.getComponents();
             for (Component component : components) {
@@ -180,7 +180,7 @@ public class CustomerDetail extends javax.swing.JFrame {
             }
             JOptionPane.showConfirmDialog(this, "Nhập sai định dạng ngày sinh", "Thông báo", JOptionPane.WARNING_MESSAGE);
         }
-        String []dob1 = dob.split("/");
+        String []dob1 = dob.split("-");
         java.sql.Date date = null;
         try {
             date = new Date(Integer.parseInt(dob1[2]), Integer.parseInt(dob1[1]), Integer.parseInt(dob1[0]));
