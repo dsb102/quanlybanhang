@@ -9,11 +9,15 @@ package GUI;
  * @author Hưng Cuốn
  */
 public class Start extends javax.swing.JFrame {
+
     /**
      * Creates new form Start
      */
     public Start() {
         initComponents();
+        this.pack();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
 
     /**
@@ -28,7 +32,6 @@ public class Start extends javax.swing.JFrame {
         btnListCustomer = new javax.swing.JButton();
         btnOrderManagement = new javax.swing.JButton();
         btnListEmployee = new javax.swing.JButton();
-        btnListShipper = new javax.swing.JButton();
         btnListProduct = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,13 +57,6 @@ public class Start extends javax.swing.JFrame {
             }
         });
 
-        btnListShipper.setText("Danh sách shipper");
-        btnListShipper.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnListShipperActionPerformed(evt);
-            }
-        });
-
         btnListProduct.setText("Danh sách sản phẩm");
         btnListProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +73,6 @@ public class Start extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnOrderManagement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnListEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
-                    .addComponent(btnListShipper, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnListCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnListProduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(137, 137, 137))
@@ -89,25 +84,32 @@ public class Start extends javax.swing.JFrame {
                 .addComponent(btnListCustomer)
                 .addGap(30, 30, 30)
                 .addComponent(btnListEmployee)
-                .addGap(37, 37, 37)
-                .addComponent(btnListShipper)
-                .addGap(28, 28, 28)
+                .addGap(42, 42, 42)
                 .addComponent(btnListProduct)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
                 .addComponent(btnOrderManagement)
-                .addGap(71, 71, 71))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListCustomerActionPerformed
-        //chuyen sang man hinh danh sach khach hang
+//        chuyen sang man hinh danh sach khach hang
         CustomerDetail customerDetail = new CustomerDetail();
+<<<<<<< HEAD
+=======
+        
+        customerDetail.setData();
+        customerDetail.setVisible(true);
+        customerDetail.pack();
+>>>>>>> 7b550abc61ca6b1b0b5969ecea15e44f55aefcca
         customerDetail.setLocationRelativeTo(null);
         customerDetail.setVisible(true);
         
         this.dispose();
+        
+        System.out.println("ao that day");
     }//GEN-LAST:event_btnListCustomerActionPerformed
 
     private void btnOrderManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderManagementActionPerformed
@@ -115,7 +117,13 @@ public class Start extends javax.swing.JFrame {
         ListOrder listOrder = new ListOrder();
         listOrder.setLocationRelativeTo(null);
         listOrder.setVisible(true);
+<<<<<<< HEAD
         
+=======
+        listOrder.pack();
+        listOrder.setLocationRelativeTo(null);
+        listOrder.setVisible(true);
+>>>>>>> 7b550abc61ca6b1b0b5969ecea15e44f55aefcca
         this.dispose();
     }//GEN-LAST:event_btnOrderManagementActionPerformed
 
@@ -124,9 +132,13 @@ public class Start extends javax.swing.JFrame {
         EmployeeDetail employeeDetail = new EmployeeDetail();
         employeeDetail.setLocationRelativeTo(null);
         employeeDetail.setVisible(true);
+        employeeDetail.pack();
+        employeeDetail.setLocationRelativeTo(null);
+        employeeDetail.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnListEmployeeActionPerformed
 
+<<<<<<< HEAD
     private void btnListShipperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListShipperActionPerformed
         // chuyen sang danh sach shipper
         ShipperDetail shipperDetail = new ShipperDetail();
@@ -135,9 +147,14 @@ public class Start extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnListShipperActionPerformed
 
+=======
+>>>>>>> 7b550abc61ca6b1b0b5969ecea15e44f55aefcca
     private void btnListProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListProductActionPerformed
         // chuyen sang man hinh danh sach san pham
         ProductDetail productDetail = new ProductDetail();
+        productDetail.setLocationRelativeTo(null);
+        productDetail.setVisible(true);
+        productDetail.pack();
         productDetail.setLocationRelativeTo(null);
         productDetail.setVisible(true);
         this.dispose();
@@ -173,10 +190,14 @@ public class Start extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+<<<<<<< HEAD
                 Start start = new Start();
                 start.setLocationRelativeTo(null); 
                 start.setVisible(true);
             
+=======
+                new Start().setVisible(true);
+>>>>>>> 7b550abc61ca6b1b0b5969ecea15e44f55aefcca
             }
         });
     }
@@ -185,7 +206,6 @@ public class Start extends javax.swing.JFrame {
     private javax.swing.JButton btnListCustomer;
     private javax.swing.JButton btnListEmployee;
     private javax.swing.JButton btnListProduct;
-    private javax.swing.JButton btnListShipper;
     private javax.swing.JButton btnOrderManagement;
     // End of variables declaration//GEN-END:variables
 }

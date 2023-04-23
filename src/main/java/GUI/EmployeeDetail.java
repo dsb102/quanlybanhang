@@ -4,6 +4,15 @@
  */
 package GUI;
 
+import model.Customer;
+import model.Employee;
+import service.EmployeeService;
+import service.impl.EmployeeServiceImpl;
+
+import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author hi
@@ -12,6 +21,8 @@ public class EmployeeDetail extends javax.swing.JFrame {
     /**
      * Creates new form EmployeeDetail
      */
+
+    private EmployeeService employeeService = new EmployeeServiceImpl();
     public EmployeeDetail() {
         initComponents();
     }

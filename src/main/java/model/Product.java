@@ -13,17 +13,27 @@ public class Product {
     private String productName;
     private double unitPrice;
     private int categoryId;
+    private int quantity;
     private int supplierId;
 
     public Product() {
     }
 
-    public Product(int productId, String productName, double unitPrice, int categoryId, int supplierId) {
+    public Product(int productId, String productName, double unitPrice, int categoryId, int quantity, int supplierId) {
         this.productId = productId;
         this.productName = productName;
         this.unitPrice = unitPrice;
+        this.quantity = quantity;
         this.categoryId = categoryId;
         this.supplierId = supplierId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public int getProductId() {
