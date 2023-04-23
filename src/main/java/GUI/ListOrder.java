@@ -455,7 +455,7 @@ public class ListOrder extends javax.swing.JFrame {
     }// </editor-fold>
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }                                           
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {
         // huy thanh toan
@@ -479,7 +479,9 @@ public class ListOrder extends javax.swing.JFrame {
     private void btnBackListOrderActionPerformed(java.awt.event.ActionEvent evt) {
         // quay lai trang chinh
         Start start = new Start();
+        start.setLocationRelativeTo(null); 
         start.setVisible(true);
+        
         this.dispose();
     }
 

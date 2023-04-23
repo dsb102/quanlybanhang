@@ -104,20 +104,25 @@ public class Start extends javax.swing.JFrame {
     private void btnListCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListCustomerActionPerformed
         //chuyen sang man hinh danh sach khach hang
         CustomerDetail customerDetail = new CustomerDetail();
+        customerDetail.setLocationRelativeTo(null);
         customerDetail.setVisible(true);
+        
         this.dispose();
     }//GEN-LAST:event_btnListCustomerActionPerformed
 
     private void btnOrderManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderManagementActionPerformed
         // chuyen sang man hinh hien thi danh sach don hang
         ListOrder listOrder = new ListOrder();
+        listOrder.setLocationRelativeTo(null);
         listOrder.setVisible(true);
+        
         this.dispose();
     }//GEN-LAST:event_btnOrderManagementActionPerformed
 
     private void btnListEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListEmployeeActionPerformed
         // chuyen sang man hinh danh sach nhan vien
         EmployeeDetail employeeDetail = new EmployeeDetail();
+        employeeDetail.setLocationRelativeTo(null);
         employeeDetail.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnListEmployeeActionPerformed
@@ -125,6 +130,7 @@ public class Start extends javax.swing.JFrame {
     private void btnListShipperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListShipperActionPerformed
         // chuyen sang danh sach shipper
         ShipperDetail shipperDetail = new ShipperDetail();
+        shipperDetail.setLocationRelativeTo(null);
         shipperDetail.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnListShipperActionPerformed
@@ -132,6 +138,7 @@ public class Start extends javax.swing.JFrame {
     private void btnListProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListProductActionPerformed
         // chuyen sang man hinh danh sach san pham
         ProductDetail productDetail = new ProductDetail();
+        productDetail.setLocationRelativeTo(null);
         productDetail.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnListProductActionPerformed
@@ -166,7 +173,10 @@ public class Start extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            new Start().setVisible(true);
+                Start start = new Start();
+                start.setLocationRelativeTo(null); 
+                start.setVisible(true);
+            
             }
         });
     }

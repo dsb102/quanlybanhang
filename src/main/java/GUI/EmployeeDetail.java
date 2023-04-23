@@ -109,7 +109,9 @@ public class EmployeeDetail extends javax.swing.JFrame {
     private void btnBackEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackEmployeeActionPerformed
         // quay lai trang chu
         Start start = new Start();
+        start.setLocationRelativeTo(null); 
         start.setVisible(true);
+        
         this.dispose();
     }//GEN-LAST:event_btnBackEmployeeActionPerformed
 

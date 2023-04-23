@@ -107,7 +107,9 @@ public class ProductDetail extends javax.swing.JFrame {
     private void btnBackProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackProductActionPerformed
         // quay lai trang ban dau
         Start start = new Start();
+        start.setLocationRelativeTo(null); 
         start.setVisible(true);
+        
         this.dispose();
     }//GEN-LAST:event_btnBackProductActionPerformed
 
