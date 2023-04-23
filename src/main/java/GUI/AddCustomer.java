@@ -209,8 +209,6 @@ public class AddCustomer extends javax.swing.JFrame {
     }
 
     private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
-        // luu vao DB va quay ve man hinh CustomerDetail
-        JOptionPane.showConfirmDialog(this, "Thêm thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
         this.dispose();
     }//GEN-LAST:event_btnAddCustomerActionPerformed
 

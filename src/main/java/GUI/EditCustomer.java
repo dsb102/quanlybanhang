@@ -229,9 +229,6 @@ public class EditCustomer extends javax.swing.JFrame {
     }
 
     private void btnUpdateCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateCustomerActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showConfirmDialog(this, "Lưu thay đổi", "Thông báo", JOptionPane.DEFAULT_OPTION);
-        updateCustomer(evt);
         this.dispose();
     }//GEN-LAST:event_btnUpdateCustomerActionPerformed
 
