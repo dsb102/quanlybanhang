@@ -174,6 +174,7 @@ public class AddCustomer extends javax.swing.JFrame {
         String dob = txfDob.getText().trim();
         if (!dob.contains("/")) {
             // todo: return sai định dạng
+            JOptionPane.showConfirmDialog(this, "Nhập sai định dạng ngày sinh", "Thông báo", JOptionPane.WARNING_MESSAGE);
             return;
         }
         String []dob1 = dob.split("/");
@@ -192,8 +193,10 @@ public class AddCustomer extends javax.swing.JFrame {
             Customer customer = new Customer(0, cusName, gender, date, phoneNumber, email, address);
             customerService.addCustomer(customer);
             // todo: add customer success
+            JOptionPane.showConfirmDialog(this, "Thêm mới thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
         } else {
             // todo: nhap sai dinh dang
+            JOptionPane.showConfirmDialog(this, "Các trường không được để trống", "Nhập sai định dạng", JOptionPane.DEFAULT_OPTION);
         }
         customerDetail.refresh();
     }

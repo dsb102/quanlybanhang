@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import java.awt.Component;
 import model.Customer;
 import service.CustomerService;
 import service.impl.CustomerServiceImpl;
@@ -185,8 +186,14 @@ public class EditCustomer extends javax.swing.JFrame {
         String dob = txfDob.getText().trim();
         if (!dob.contains("-")) {
             System.out.println("");
-            // todo: return sai định dạng
-            return;
+            // return sai định dạng
+            Component[] components = jPanel1.getComponents();
+            for (Component component : components) {
+                if (component instanceof JTextField) {
+                    ((JTextField) component).setText("");
+                }
+            }
+            JOptionPane.showConfirmDialog(this, "Nhập sai định dạng ngày sinh", "Thông báo", JOptionPane.WARNING_MESSAGE);
         }
         String []dob1 = dob.split("-");
         java.sql.Date date = null;
@@ -203,11 +210,13 @@ public class EditCustomer extends javax.swing.JFrame {
         if (notEmpty(cusName, gender, phoneNumber, email, address)) {
             Customer customer = new Customer(Integer.parseInt(txfIdCust.getText()), cusName, gender, date, phoneNumber, email, address);
             customerService.updateCustomer(customer);
-            // todo: add customer success
+            //add customer success
+            JOptionPane.showConfirmDialog(this, "Cập nhật thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
             System.out.println("Thanh cong");
         } else {
             System.out.println("That bai");
-            // todo: nhap sai dinh dang
+            //nhap sai dinh dang
+            JOptionPane.showConfirmDialog(this, "Các trường không được để trống", "Thông báo", JOptionPane.WARNING_MESSAGE);
         }
         customerDetail.refresh();
     }
@@ -222,6 +231,7 @@ public class EditCustomer extends javax.swing.JFrame {
     private void btnUpdateCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateCustomerActionPerformed
         // TODO add your handling code here:
         JOptionPane.showConfirmDialog(this, "Lưu thay đổi", "Thông báo", JOptionPane.DEFAULT_OPTION);
+        updateCustomer(evt);
         this.dispose();
     }//GEN-LAST:event_btnUpdateCustomerActionPerformed
 
