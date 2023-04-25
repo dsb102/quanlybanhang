@@ -5,6 +5,7 @@
 package model;
 
 import java.sql.Date;
+import java.util.Objects;
 
 /**
  *
@@ -90,6 +91,6 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" + "customerId=" + customerId + ", customerName=" + customerName + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + ", phoneNumber=" + phoneNumber + ", email=" + email + ", address=" + address + '}';
+        return "Customer{" + "customerName=" + customerName + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + ", phoneNumber=" + phoneNumber + ", email=" + email + ", address=" + address + '}';
     }
 }

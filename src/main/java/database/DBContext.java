@@ -46,9 +46,9 @@ public class DBContext {
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public static void main(String[] args) throws ClassNotFoundException {
-        DBContext db = new DBContext();
-        System.out.println(db.connection);
-    }
+
+//    public static void main(String[] args) throws ClassNotFoundException {
+//        DBContext db = new DBContext();
+//        System.out.println(db.connection);
+//    }
 }

@@ -8,12 +8,9 @@ import database.query.SQLQuery;
 import model.OrderDetail;
 import model.Orders;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.Date;
 
 /**
  *
@@ -63,20 +60,26 @@ public class OrderDAO extends DBContext {
         return orders.get(0);
     }
 
-    public boolean createOrder(Orders orderDetail) {
+    public int createOrder(Orders orderDetail) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(SQLQuery.createOrder());
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQuery.createOrder(), Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, orderDetail.getCustomerId());
             preparedStatement.setInt(2, orderDetail.getEmployeeId());
             int rowUpdate = preparedStatement.executeUpdate();
             if (rowUpdate == 0) {
-                return false;
+                return -1;
             }
-            return true;
+
+            ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                return generatedKeys.getInt(1);
+            } else {
+                throw new SQLException("Creating customer failed, no ID obtained.");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
+        return -1;
     }
 
     public boolean updateOrder(int orderId, int payment) {
@@ -84,7 +87,6 @@ public class OrderDAO extends DBContext {
             PreparedStatement preparedStatement = connection.prepareStatement(SQLQuery.updateOrderPayment());
             preparedStatement.setInt(1, payment);
             preparedStatement.setInt(2, orderId);
-            System.out.println(preparedStatement);
             int rowUpdate = preparedStatement.executeUpdate();
             if (rowUpdate == 0) {
                 return false;
@@ -140,7 +142,51 @@ public class OrderDAO extends DBContext {
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(new OrderDAO().updateOrder(1, 1));
+    public int countBought() {
+        int count = 0;
+        List<Orders> orders = new ArrayList<>();
+        try {
+            PreparedStatement pstm = connection.prepareStatement("SELECT count(*) as count FROM Orders WHERE payment = 1");
+            ResultSet resultSet = pstm.executeQuery();
+            while (resultSet.next()) {
+                count = resultSet.getInt("count");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
     }
+
+    public int countNotBoughtYet() {
+        int count = 0;
+        List<Orders> orders = new ArrayList<>();
+        try {
+            PreparedStatement pstm = connection.prepareStatement("SELECT count(*) as count FROM Orders WHERE payment = 0 AND status = 1");
+            ResultSet resultSet = pstm.executeQuery();
+            while (resultSet.next()) {
+                count = resultSet.getInt("count");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+    public int countTotal() {
+        int count = 0;
+        try {
+            PreparedStatement pstm = connection.prepareStatement("SELECT count(*) as count FROM Orders WHERE status = 1");
+            ResultSet resultSet = pstm.executeQuery();
+            while (resultSet.next()) {
+                count = resultSet.getInt("count");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+//    public static void main(String[] args) {
+//        System.out.println(new OrderDAO().updateOrder(1, 1));
+//    }
 }

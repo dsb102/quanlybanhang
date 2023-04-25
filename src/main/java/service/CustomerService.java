@@ -17,5 +17,5 @@ public interface CustomerService {
     boolean updateCustomer(Customer customer);
     boolean addCustomer(Customer customer);
     boolean removeCustomer(int id);
-    boolean createCustomer(Customer customer);
+    int countUserActive();
 }

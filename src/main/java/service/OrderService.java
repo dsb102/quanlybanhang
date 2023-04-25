@@ -14,9 +14,12 @@ import java.util.List;
  * @author Admin
  */
 public interface OrderService {
-    boolean createOrder(Orders order);
+    int createOrder(Orders order);
     boolean removeOrder(int id);
     List<Orders> getAllOrder();
     boolean updateOrder(Orders orders);
     Orders findById(int id);
+    int countQuantityBought();
+    int countTotal();
+    int countQuantityNotBoughtYet();
 }

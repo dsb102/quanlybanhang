@@ -15,7 +15,7 @@ import service.OrderService;
  *
  * @author Admin
  */
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
 
     private OrderDAO orderDAO = new OrderDAO();
 
@@ -40,7 +40,22 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public boolean createOrder(Orders order) {
+    public int countQuantityBought() {
+        return orderDAO.countBought();
+    }
+
+    @Override
+    public int countTotal() {
+        return orderDAO.countTotal();
+    }
+
+    @Override
+    public int countQuantityNotBoughtYet() {
+        return orderDAO.countNotBoughtYet();
+    }
+
+    @Override
+    public int createOrder(Orders order) {
         return orderDAO.createOrder(order);
     }
 }

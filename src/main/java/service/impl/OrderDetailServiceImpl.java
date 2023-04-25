@@ -23,8 +23,8 @@ public class OrderDetailServiceImpl implements OrderDetailService {
     }
 
     @Override
-    public boolean createOrderDetail(OrderDetail orderDetail) {
-        boolean isSuccess = orderDetailDAO.createOrderDetail(orderDetail);
+    public int createOrderDetail(OrderDetail orderDetail) {
+        int isSuccess = orderDetailDAO.createOrderDetail(orderDetail);
         orderDAO.updateTotalPrice(orderDetail.getOrderId());
         return isSuccess;
     }
@@ -39,10 +39,10 @@ public class OrderDetailServiceImpl implements OrderDetailService {
         return isSuccess;
     }
 
-    @Override
-    public boolean updateOrderDetail(OrderDetail orderDetail) {
-        return orderDetailDAO.updateOrderDetail(orderDetail);
-    }
+//    @Override
+//    public boolean updateOrderDetail(OrderDetail orderDetail) {
+//        return orderDetailDAO.updateOrderDetail(orderDetail);
+//    }
 
     @Override
     public OrderDetail findById(int id) {

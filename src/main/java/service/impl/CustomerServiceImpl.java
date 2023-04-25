@@ -45,7 +45,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public boolean createCustomer(Customer customer) {
-        return customerDAO.addCustomer(customer);
+    public int countUserActive() {
+        return customerDAO.countCustomerActive();
     }
 }

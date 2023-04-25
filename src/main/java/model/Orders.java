@@ -15,7 +15,7 @@ public class Orders {
     private int customerId;
     private int employeeId;
     private Date orderDate;
-    private Date deleveryDate;//ngày giao hàng
+    private Date deleveryDate; //ngày giao hàng
     private double totalPrice;
     private int shipperId;
     private boolean payment;
@@ -43,16 +43,6 @@ public class Orders {
         this.totalPrice = totalPrice;
         this.shipperId = shipperId;
         this.payment = payment;
-    }
-
-    public Orders(int orderId, int customerId, int employeeId, Date orderDate, Date deleveryDate, double totalPrice, int shipperId) {
-        this.orderId = orderId;
-        this.customerId = customerId;
-        this.employeeId = employeeId;
-        this.orderDate = orderDate;
-        this.deleveryDate = deleveryDate;
-        this.totalPrice = totalPrice;
-        this.shipperId = shipperId;
     }
 
     public int getOrderId() {

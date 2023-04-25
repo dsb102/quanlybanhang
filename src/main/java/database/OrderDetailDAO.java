@@ -6,6 +6,7 @@ import model.OrderDetail;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,22 +52,27 @@ public class OrderDetailDAO extends DBContext {
         return orderDetail;
     }
 
-    public boolean createOrderDetail(OrderDetail orderDetail) {
+    public int createOrderDetail(OrderDetail orderDetail) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(SQLQuery.createOrderDetail());
+            PreparedStatement preparedStatement = connection.prepareStatement(SQLQuery.createOrderDetail(), Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, orderDetail.getOrderId());
             preparedStatement.setInt(2, orderDetail.getProductId());
             preparedStatement.setInt(3, orderDetail.getQuantity());
             preparedStatement.setDouble(4, orderDetail.getUnitPrice());
-            int rowUpdate = preparedStatement.executeUpdate();
-            if (rowUpdate == 0) {
-                return false;
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected == 0) {
+                return -1;
             }
-            return true;
+            ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                return generatedKeys.getInt(1);
+            } else {
+                throw new SQLException("Creating customer failed, no ID obtained.");
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
+        return -1;
     }
 
     public boolean updateOrderDetail(OrderDetail orderDetail) {

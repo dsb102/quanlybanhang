@@ -528,9 +528,9 @@ public class ListOrder extends javax.swing.JFrame {
                 JOptionPane.showConfirmDialog(this, "Không đủ số lượng", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else {
                 order = new OrderDetail(idP, idO, idC, idE, quan);
-                boolean success = orderDetailService.createOrderDetail(order);
+                int successId = orderDetailService.createOrderDetail(order);
                 productService.updateQuantity(idP, productService.findById(idP).getQuantity() + (quan - orderDetailService.countQuantityByDetailAndProductId(idO, idP)));
-                if (success) {
+                if (successId != -1) {
                     //show them don hang thanh cong
                     JOptionPane.showConfirmDialog(this, "Thêm mới thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
                 } else {
@@ -567,8 +567,8 @@ public class ListOrder extends javax.swing.JFrame {
                 // todo: show chỉ còn {conLai} {name} : <chỉ còn lại 5 cái áo>
             } else {
                 order = new OrderDetail(idP, idO, quan, productService.findById(idP).getUnitPrice());
-                boolean success = orderDetailService.createOrderDetail(order);
-                if (success) {
+                int successId = orderDetailService.createOrderDetail(order);
+                if (successId != -1) {
                     System.out.println("thanh cong");
                     // todo: show them don hang thanh cong
                     JOptionPane.showConfirmDialog(this, "Thêm mới thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
@@ -697,8 +697,8 @@ public class ListOrder extends javax.swing.JFrame {
                 JOptionPane.showConfirmDialog(this, "Không tìm thấy id nhân viên", "Thông báo", JOptionPane.DEFAULT_OPTION);
             } else {
                 order = new Orders(idC, idE);
-                boolean success = orderService.createOrder(order);
-                if (success) {
+                int idJustAdd = orderService.createOrder(order);
+                if (idJustAdd != -1) {
                     // todo: show them don hang thanh cong
                     JOptionPane.showConfirmDialog(this, "Thêm mới thành công", "Thông báo", JOptionPane.DEFAULT_OPTION);
                 } else {
