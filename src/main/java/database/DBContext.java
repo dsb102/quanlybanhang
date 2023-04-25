@@ -17,12 +17,19 @@ import java.util.logging.Logger;
 public class DBContext {
     
     protected Connection connection;
+
+    public static String url = "jdbc:mysql://localhost:33068/quanlybanhang";
+
+    public static String user = "dung";
+
+    public static String password = "12345678";
+
     
     public DBContext() {
-        String url = "jdbc:mysql://localhost:33068/quanlybanhang";
-        String user = "dung";
-        String password = "12345678";
-        
+//        String url = "jdbc:mysql://localhost:33068/quanlybanhang";
+//        String user = "dung";
+//        String password = "12345678";
+
         try {
             
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -30,7 +37,7 @@ public class DBContext {
             connection = DriverManager.getConnection(url, user, password);
 
             // Nếu kết nối thành công, in ra thông báo
-            System.out.println("Kết nối tới database thành công!");
+//            System.out.println("Kết nối tới database thành công!");
             
         } catch (SQLException e) {
             // Nếu kết nối không thành công, in ra thông báo lỗi

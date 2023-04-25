@@ -11,7 +11,7 @@ package database.query;
 public class SQLQuery {
 
     public static String getCustomerById() {
-        return "SELECT * FROM Customer WHERE customerId = ?";
+        return "SELECT * FROM Customer WHERE customerId = ? and status = 1";
     }
     
     public static String getAllCustomer() {
